@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Morgane Girault</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap');
+    :root {
+      --color-black: #000000;
+      --color-offwhite: #f8f6f1;
+      --color-grey: #7a7a7a;
+      --color-accent: #8a6e4f;
+      --font-sans: 'Inter', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+    html {
+      box-sizing: border-box;
+      font-size: 16px;
+      background-color: var(--color-offwhite);
+      color: var(--color-black);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      padding: 0 1rem 3rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      border-bottom: 1px solid var(--color-grey);
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    header a {
+      color: var(--color-black);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    header a:hover,
+    header a:focus {
+      color: var(--color-accent);
+      outline: none;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--color-black);
+    }
+    p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--color-grey);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+    }
+    a.contact-link {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--color-black);
+      text-decoration: underline;
+      word-break: break-word;
+    }
+    a.contact-link:hover,
+    a.contact-link:focus {
+      color: var(--color-accent);
+      outline: none;
+    }
+    footer {
+      border-top: 1px solid var(--color-grey);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      color: var(--color-grey);
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    footer a {
+      color: var(--color-grey);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover,
+    footer a:focus {
+      color: var(--color-accent);
+      outline: none;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      margin-left: 32px;
+      font-size: 14px;
+      color: var(--color-grey);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    nav a[aria-current="page"] {
+      color: var(--color-black);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Morgane Girault</div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact</h1>
+    <p>
+      Cette page est dédiée aux échanges professionnels dans un cadre clair et structuré.
+    </p>
+    <p>
+      Vous pouvez me contacter directement via les canaux ci-dessous.
+    </p>
+
+    <section>
+      <h2>Email</h2>
+      <p><a class="contact-link" href="mailto:Morgane.girault@naturellement-soi.com">Morgane.girault@naturellement-soi.com</a></p>
+    </section>
+
+    <section>
+      <h2>Facebook Messenger</h2>
+      <p><a class="contact-link" href="https://m.me/61555813217426" target="_blank" rel="noopener noreferrer">https://m.me/61555813217426</a></p>
+    </section>
+
+    <p style="color: var(--color-grey); font-size: 0.875rem; max-width: 600px;">
+      Cette page n'est pas destinée aux questions de coaching ou demandes d’accompagnement.
+    </p>
+  </main>
+
+  <footer>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+  </footer>
+</body>
+</html>

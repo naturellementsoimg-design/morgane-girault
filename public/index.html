@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- =====================
+       META ESSENTIELLES
+  ====================== -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Morgane Girault - Mentorat de décision & repositionnement high-level</title>
+
+  <meta name="description" content="Mentorat 1:1 haut niveau pour femmes entrepreneures et leaders. Clarté, décisions structurantes, repositionnement identitaire et stratégique." />
+
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Morgane Girault - Mentorat de décision high-level" />
+  <meta property="og:description" content="Je ne motive pas. Je ne rassure pas. Je clarifie et j’accompagne des décisions qui changent réellement la trajectoire d’une femme." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.morgane-girault.com" />
+
+  <!-- =====================
+       TYPOGRAPHIES
+  ====================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- =====================
+       CSS GLOBAL (INTÉGRÉ)
+  ====================== -->
+  <style>
+    :root {
+      --black: #0F0F12;
+      --anthracite: #1C1C22;
+      --off-white: #F6F6F4;
+      --grey: #7A7A80;
+      --accent: #B8A77C;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--off-white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =====================
+       HEADER / MENU
+    ====================== */
+    header {
+      width: 100%;
+      padding: 24px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      margin-left: 32px;
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    nav a:hover {
+      color: var(--black);
+    }
+
+    /* =====================
+       SECTIONS
+    ====================== */
+    section {
+      padding: 120px 6%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section.dark {
+      background-color: var(--anthracite);
+      color: var(--off-white);
+      max-width: none;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      max-width: 720px;
+      margin-bottom: 24px;
+      color: var(--grey);
+    }
+
+    section.dark p {
+      color: #CFCFCF;
+    }
+
+    /* =====================
+       HERO
+    ====================== */
+    .hero {
+      padding-top: 160px;
+    }
+
+    .hero p {
+      color: var(--grey);
+      margin-top: 32px;
+    }
+
+    /* =====================
+       IMAGE / PORTRAIT
+    ====================== */
+    .portrait {
+      margin-top: 48px;
+      max-width: 420px;
+      background-color: #FFFFFF;
+      padding: 12px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .portrait.secondary {
+      max-width: 360px;
+      margin-top: 64px;
+      padding: 10px;
+    }
+
+    /* =====================
+       CTA
+    ====================== */
+    .cta {
+      display: inline-block;
+      margin-top: 48px;
+      padding: 16px 36px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .cta:hover {
+      background-color: var(--accent);
+      color: var(--black);
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+
+    .cta.secondary {
+      border-color: var(--grey);
+      color: var(--grey);
+    }
+
+    .cta.secondary:hover {
+      background-color: transparent;
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    /* =====================
+       LISTES
+    ====================== */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 48px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 16px;
+      color: var(--grey);
+    }
+
+    section.dark ul li {
+      color: #CFCFCF;
+    }
+
+    /* =====================
+       FOOTER
+    ====================== */
+    footer {
+      padding: 64px 6%;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    footer a {
+      margin-right: 24px;
+      color: var(--grey);
+    }
+
+    footer a:hover {
+      color: var(--black);
+    }
+
+    /* =====================
+       RESPONSIVE
+    ====================== */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .columns {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      nav a {
+        margin-left: 16px;
+      }
+    }
+    section {
+      scroll-margin-top: 120px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================
+       HEADER
+  ====================== -->
+  <header>
+    <div class="logo">Morgane Girault</div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- =====================
+       HERO
+  ====================== -->
+  <section class="hero">
+    <h1>
+      Je ne motive pas. Je ne rassure pas.<br>
+      Je clarifie, je recadre, et j’accompagne des décisions<br>
+      qui changent réellement la trajectoire d’une femme.
+    </h1>
+
+    <p>
+      Morgane Girault<br>
+      Mentor de décision & de repositionnement high-level
+    </p>
+
+    <div class="cta-group">
+      <a href="https://book.stripe.com/8x2cMY8HTbeOe6aa4j8k82J" class="cta">Paiement en une fois - 5 000 €</a>
+      <a href="https://buy.stripe.com/fZu28k5vHfv46DI90f8k82K" class="cta secondary">Paiement en deux fois - 2 × 2 500 €</a>
+    </div>
+    <div class="portrait">
+      <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1770625544/morgane.girault.charismatique_d01xpa.jpg" alt="Morgane Girault - mentor de décision" />
+    </div>
+  </section>
+
+  <!-- =====================
+       RÔLE & POSTURE
+  ====================== -->
+  <section>
+    <h2>Mon rôle</h2>
+
+    <p>
+      J’accompagne des femmes lucides, déjà construites,
+      qui savent ce qu’elles veulent - mais restent bloquées
+      au seuil suivant.
+    </p>
+
+    <p>
+      Je travaille là où la clarté est déjà là,
+      mais où la décision n’est pas encore incarnée.
+    </p>
+
+    <p>
+      Mon rôle n’est pas d’expliquer.
+      Il est de clarifier, trancher et repositionner.
+    </p>
+
+    <p>
+      Je travaille avec des femmes qui portent déjà une trajectoire solide,
+      mais qui sentent que quelque chose doit être décidé, déplacé ou assumé
+      pour passer au niveau suivant.
+    </p>
+
+    <p>
+      Le travail se fait sans détour, sans mise en scène,
+      et sans discours de surface.
+    </p>
+    <p>
+      J’accompagne depuis plusieurs années des femmes entrepreneures et leaders
+      dans des décisions à fort enjeu.
+    </p>
+  </section>
+
+  <!-- =====================
+       FAIS / NE FAIS PAS
+  ====================== -->
+  <section class="dark">
+    <h2>Cadre</h2>
+
+    <div class="columns">
+      <div>
+        <h3>Je fais</h3>
+        <ul>
+          <li>Accompagnement décisionnel à fort enjeu</li>
+          <li>Repositionnement identitaire et stratégique</li>
+          <li>Clarification des points de blocage invisibles</li>
+          <li>Accompagnement de passages de seuil</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Je ne fais pas</h3>
+        <ul>
+          <li>Coaching motivationnel</li>
+          <li>Thérapie ou accompagnement émotionnel</li>
+          <li>Spiritualité comme refuge</li>
+          <li>Développement personnel généraliste</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       OFFRE
+  ====================== -->
+  <section>
+    <h2>Mentorat 1:1 - 3 mois</h2>
+
+    <p>
+      Un accompagnement direct, structuré,
+      centré sur des décisions réelles
+      et leur incarnation concrète.
+    </p>
+
+    <p>
+      Durée : 3 mois<br>
+      Format : 1:1<br>
+      Prix : 5 000 €<br>
+      Entrée : paiement direct
+    </p>
+    <p>
+      <strong>Cadre de travail</strong><br>
+      • Accompagnement individuel sur 3 mois<br>
+      • Séances régulières planifiées à l’avance<br>
+      • Travail préparatoire demandé entre les séances
+    </p>
+
+    <div class="portrait secondary">
+      <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1770625882/WhatsApp_Image_2026-02-09_at_15.29.12_gwuyk2.jpg" alt="Morgane Girault - accompagnement high-level" />
+    </div>
+
+    <div class="cta-group">
+      <a href="https://book.stripe.com/8x2cMY8HTbeOe6aa4j8k82J" class="cta">Paiement en une fois - 5 000 €</a>
+      <a href="https://buy.stripe.com/fZu28k5vHfv46DI90f8k82K" class="cta secondary">Paiement en deux fois - 2 × 2 500 €</a>
+    </div>
+  </section>
+
+  <!-- =====================
+       NON DESTINÉ
+  ====================== -->
+  <section class="dark">
+    <h2>Ce cadre n’est pas destiné</h2>
+
+    <p>
+      à des femmes en quête de réassurance,
+      en reconstruction,
+      ou cherchant des réponses externes.
+    </p>
+
+    <p>
+      Il s’adresse à des femmes capables
+      de décider sans justification émotionnelle.
+    </p>
+    <p>
+      <strong>Ce que ce mentorat implique</strong><br>
+      • Des décisions concrètes<br>
+      • Une responsabilité pleine de votre part<br>
+      • Un engagement réel dans la durée
+    </p>
+
+    <p>
+      <strong>Ce que ce mentorat n’est pas</strong><br>
+      • Un espace de décharge émotionnelle<br>
+      • Un accompagnement à la demande<br>
+      • Un cadre flexible ou négociable
+    </p>
+  </section>
+
+  <!-- =====================
+       DÉCISION
+  ====================== -->
+  <section>
+    <h2>Décision</h2>
+
+    <p>
+      Si vous êtes concernée,
+      la décision est simple.
+    </p>
+
+    <div class="cta-group">
+      <a href="https://book.stripe.com/8x2cMY8HTbeOe6aa4j8k82J" class="cta">Paiement en une fois - 5 000 €</a>
+      <a href="https://buy.stripe.com/fZu28k5vHfv46DI90f8k82K" class="cta secondary">Paiement en deux fois - 2 × 2 500 €</a>
+    </div>
+  </section>
+
+  <!-- =====================
+       FOOTER
+  ====================== -->
+  <footer>
+    <a href="contact.html">Contact</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    <p>Mentorat individuel - pas de thérapie - pas de coaching émotionnel.</p>
+  </footer>
+
+</body>
+</html>

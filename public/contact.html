@@ -7,10 +7,10 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap');
     :root {
-      --color-black: #000000;
-      --color-offwhite: #f8f6f1;
-      --color-grey: #7a7a7a;
-      --color-accent: #8a6e4f;
+      --color-black: #3b1d57;      /* violet profond */
+      --color-offwhite: #f8f6f1;   /* ivoire doux */
+      --color-grey: #7d6f8f;       /* gris violacé lisible */
+      --color-accent: #c6a86b;     /* or chaud */
       --font-sans: 'Inter', sans-serif;
       --font-serif: 'Playfair Display', serif;
     }
@@ -35,7 +35,7 @@
       margin-right: auto;
     }
     header {
-      border-bottom: 1px solid var(--color-grey);
+      border-bottom: 1px solid rgba(59, 29, 87, 0.15);
       margin-bottom: 2rem;
       padding-bottom: 0.5rem;
       display: flex;
@@ -90,7 +90,9 @@
       text-decoration: underline;
       word-break: break-word;
     }
-    a.contact-link:hover,
+    a.contact-link:hover {
+      color: var(--color-accent);
+    }
     a.contact-link:focus {
       color: var(--color-accent);
       outline: none;
@@ -161,6 +163,14 @@
     <section>
       <h2>Facebook Messenger</h2>
       <p><a class="contact-link" href="https://m.me/61555813217426" target="_blank" rel="noopener noreferrer">https://m.me/61555813217426</a></p>
+    </section>
+
+    <section>
+      <p style="border-left: 3px solid var(--color-accent); padding-left: 1rem; color: var(--color-grey); max-width: 600px;">
+        Les demandes sont lues avec attention.
+        <br>
+        Je réponds uniquement lorsque le cadre proposé est pertinent et aligné.
+      </p>
     </section>
 
     <p style="color: var(--color-grey); font-size: 0.875rem; max-width: 600px;">

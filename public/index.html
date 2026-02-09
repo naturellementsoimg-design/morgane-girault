@@ -33,11 +33,12 @@
   ====================== -->
   <style>
     :root {
-      --black: #0F0F12;
-      --anthracite: #1C1C22;
-      --off-white: #F6F6F4;
-      --grey: #7A7A80;
-      --accent: #B8A77C;
+      --black: #3b1d57;
+      --anthracite: #3b1d57;
+      --off-white: #F5F3EE;
+      --grey: #8A8A92;
+      --accent: #C6A86B; /* or chaud / champagne */
+      --deep-bg: #3b1d57; /* fond profond magnétique */
     }
 
     * {
@@ -95,7 +96,7 @@
     }
 
     section.dark {
-      background-color: var(--anthracite);
+      background-color: var(--deep-bg);
       color: var(--off-white);
       max-width: none;
     }
@@ -104,6 +105,7 @@
       font-family: 'Playfair Display', serif;
       font-weight: 500;
       margin-bottom: 32px;
+      letter-spacing: 0.4px;
     }
 
     h1 {
@@ -130,6 +132,13 @@
     ====================== */
     .hero {
       padding-top: 160px;
+      background-color: var(--deep-bg);
+      color: var(--off-white);
+    }
+
+    .hero h1,
+    .hero p {
+      color: var(--off-white);
     }
 
     .hero p {
@@ -146,7 +155,7 @@
       background-color: #FFFFFF;
       padding: 12px;
       border-radius: 14px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
     }
 
     .portrait img {
@@ -172,7 +181,7 @@
       border: 1px solid var(--accent);
       color: var(--accent);
       font-size: 14px;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
@@ -189,14 +198,20 @@
     }
 
     .cta.secondary {
-      border-color: var(--grey);
-      color: var(--grey);
+      border-color: var(--black);
+      color: var(--black);
+    }
+
+    section.dark .cta.secondary,
+    .hero .cta.secondary {
+      border-color: var(--off-white);
+      color: var(--off-white);
     }
 
     .cta.secondary:hover {
-      background-color: transparent;
+      background-color: var(--off-white);
       color: var(--black);
-      border-color: var(--black);
+      border-color: var(--off-white);
     }
 
     /* =====================
@@ -318,19 +333,12 @@
     </p>
 
     <p>
-      Je travaille là où la clarté est déjà là,
-      mais où la décision n’est pas encore incarnée.
-    </p>
-
-    <p>
-      Mon rôle n’est pas d’expliquer.
-      Il est de clarifier, trancher et repositionner.
-    </p>
-
-    <p>
-      Je travaille avec des femmes qui portent déjà une trajectoire solide,
-      mais qui sentent que quelque chose doit être décidé, déplacé ou assumé
-      pour passer au niveau suivant.
+      J’accompagne des femmes qui :
+      <br>– ont déjà une activité solide
+      <br>– prennent des décisions pour d’autres (clients, équipes, famille)
+      <br>– mais retardent encore certaines décisions pour elles-mêmes
+      <br>– savent que le problème n’est pas un manque de compétences
+      <br>– mais un seuil non franchi
     </p>
 
     <p>
@@ -382,6 +390,14 @@
       Un accompagnement direct, structuré,
       centré sur des décisions réelles
       et leur incarnation concrète.
+    </p>
+    <p>
+      <strong>Ce que ce travail transforme concrètement</strong><br>
+      • Une décision claire là où vous reportez depuis des mois<br>
+      • Une posture assumée dans votre activité et vos relations professionnelles<br>
+      • La fin des compromis silencieux qui vous maintiennent en tension<br>
+      • Un réalignement concret entre ce que vous portez et ce que vous incarnez<br>
+      • Une trajectoire lisible, assumée, sans justification permanente
     </p>
 
     <p>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Morgane Girault | Identity & Leadership Mentor</title>
+  <meta name="description" content="Discover the story behind Morgane Girault - former entrepreneur turned identity and leadership mentor. Helping ambitious women recalibrate, decide, and build aligned success." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<style>
+/* ==============================
+   ABOUT PAGE
+   ============================== */
+
+.about-hero {
+  padding: 84px 0 56px;
+}
+
+.about-hero .hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about-profile {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: center;
+  margin: 10px 0 34px;
+}
+
+.about-image {
+  background: white;
+  padding: 14px;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(59,29,87,0.15);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.about-intro {
+  padding: 12px 0;
+}
+
+.about-intro p {
+  margin: 0 0 12px;
+  line-height: 1.75;
+}
+
+.about-intro strong {
+  letter-spacing: 0.2px;
+}
+
+.content-section {
+  padding: 80px 0 100px;
+  background: #ffffff;
+  position: relative;
+  margin-top: -40px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.card-section {
+  background: white;
+  padding: 42px 48px;
+  border-radius: 26px;
+  box-shadow: 0 18px 40px rgba(59,29,87,0.08);
+  margin-bottom: 48px;
+}
+
+.card-section h2 {
+  margin-top: 0;
+}
+
+.content-section h2 {
+  margin-top: 34px;
+}
+
+.content-section h3 {
+  margin-top: 26px;
+}
+
+.content-section p {
+  max-width: 900px;
+  line-height: 1.75;
+}
+
+.content-section ul {
+  max-width: 900px;
+  padding-left: 18px;
+}
+
+.content-section ul li {
+  margin: 10px 0;
+  line-height: 1.65;
+}
+
+.content-section blockquote {
+  max-width: 900px;
+  margin: 22px 0;
+  padding: 18px 20px;
+  border-left: 4px solid rgba(59,29,87,0.55);
+  background: rgba(59,29,87,0.06);
+  border-radius: 14px;
+  font-style: italic;
+}
+
+.content-section blockquote p {
+  margin: 0;
+}
+
+.about-secondary-image {
+  margin: 48px auto 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-secondary-image .image-frame {
+  background: white;
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(59,29,87,0.12);
+  max-width: 320px;
+  width: 100%;
+}
+
+.about-secondary-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+.content-section .cta {
+  margin-top: 26px;
+  text-align: center;
+}
+
+@media (max-width: 920px) {
+  .about-profile {
+    grid-template-columns: 260px 1fr;
+  }
+  .card-section {
+    padding: 28px 22px;
+  }
+  .about-profile {
+    grid-template-columns: 1fr;
+  }
+  .about-image {
+    margin-bottom: 22px;
+  }
+}
+/* ==============================
+   GLOBAL POLISH FOR ABOUT PAGE
+   ============================== */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #2a153f 0%, #3b1d57 30%, #f8f6fb 70%, #ffffff 100%);
+  color: #2d2438;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #3b1d57;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+.hero.about-hero {
+  background: linear-gradient(135deg, #3b1d57 0%, #5a2d84 100%);
+  color: white;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.hero.about-hero h1 {
+  color: white;
+}
+
+.hero.about-hero p {
+  opacity: 0.85;
+}
+
+.navbar {
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #3b1d57;
+}
+
+.nav-links a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #3b1d57;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+.nav-links .active {
+  border-bottom: 2px solid #3b1d57;
+  padding-bottom: 4px;
+}
+
+.content-section {
+  padding: 60px 0 80px;
+}
+
+.content-section p {
+  font-size: 16px;
+  color: #3a3146;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #3b1d57;
+  color: white;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #5a2d84;
+  transform: translateY(-2px);
+}
+
+footer {
+  background: #f4f1f8;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #3b1d57;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+</style>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Morgane Girault</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="identity-clarity-audit.html">Identity Clarity Audit</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero about-hero">
+    <div class="hero-content">
+      <h1>Hi, I’m Morgane.</h1>
+      <p>Identity & Leadership Recalibration Mentor · Medium · Mother · Entrepreneur</p>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section class="content-section">
+    <div class="container">
+
+      <!-- PROFILE VISUAL BLOCK -->
+      <div class="about-profile">
+        <div class="about-image">
+          <!-- Replace src with your real image path -->
+          <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1771210790/WhatsApp_Image_2026-02-16_at_09.11.57_d53ivb.jpg" alt="Morgane Girault portrait">
+        </div>
+        <div class="about-intro">
+          <p><strong>33 years old. Single mother of two. Founder. Visionary.</strong></p>
+          <p>
+            I help high-capacity women recalibrate their identity,
+            make powerful decisions, and build aligned success -
+            without shrinking their ambition.
+          </p>
+        </div>
+      </div>
+
+      <div class="card-section">
+      <h2>My Story</h2>
+
+      <p>
+        My name is Morgane Girault. I’m 33 years old, a single mother of two, and the founder of a leadership and identity recalibration practice for ambitious women.
+      </p>
+
+      <p>
+        But none of this started in the world of mentoring.
+      </p>
+
+      <p>
+        I’ve built multiple businesses from the ground up. A cosmetic boutique in Paris. A beauty institute in France. I learned structure, operations, branding, sales - and what it truly takes to build something tangible.
+      </p>
+
+      <p>
+        Along the way, something unexpected kept happening.
+      </p>
+
+      <p>
+        Women were coming to me - not just for services, but for clarity. For direction. For perspective. They asked for advice on their life decisions, their positioning, their identity shifts, their business moves.
+      </p>
+
+      <p>
+        I realized I wasn’t just building companies.
+      </p>
+
+      <p>
+        I was recalibrating people.
+      </p>
+
+      <p>
+        And eventually, I made a radical decision.
+      </p>
+
+      <p>
+        I walked away from what was stable. I left the predictable path. I moved across continents with my children. And I fully committed to what had always been there beneath the surface:
+      </p>
+
+      <h3>My ability to see beyond the surface.</h3>
+
+      <p>
+        My work today is a fusion of grounded strategy and intuitive depth.
+      </p>
+
+      <p>
+        I am deeply intuitive. My mediumship is not performative - it’s perceptive. I detect patterns beneath words. I see generational dynamics. I identify energetic blocks and unspoken fears. I understand how identity trauma can shape decision-making.
+      </p>
+
+      <p>
+        But I don’t stop at awareness.
+      </p>
+
+      <p>
+        I build structured recalibration protocols.
+      </p>
+
+      <p>
+        I create custom workbooks during mentorship containers. I guide women through decisive action plans. I help them move from internal clarity to external execution.
+      </p>
+      </div>
+
+      <div class="card-section">
+      <h2>Who I Work With</h2>
+
+      <p>
+        I work with ambitious women who have already achieved something - but feel the ceiling.
+      </p>
+
+      <p>
+        They are not beginners.
+      </p>
+
+      <p>
+        They are founders, creatives, leaders, high-capacity thinkers who know they are capable of more - but sense something misaligned beneath the surface.
+      </p>
+
+      <p>
+        They don’t need motivation.
+      </p>
+
+      <p>
+        They need recalibration.
+      </p>
+      </div>
+
+      <div class="card-section">
+      <h2>What Makes My Work Different</h2>
+
+      <ul>
+        <li>+ 80 women guided through identity and decision recalibration</li>
+        <li>Energetic and transgenerational pattern detection</li>
+        <li>Strategic execution frameworks grounded in real entrepreneurship</li>
+        <li>Custom-built mentorship tools (not generic templates)</li>
+        <li>Immediate clarity shifts often from the first session</li>
+      </ul>
+
+      <p>
+        My clients often tell me:
+      </p>
+
+      <blockquote>
+        “It was foggy before. After two sessions, I see clearly. I’m finally moving.”
+      </blockquote>
+
+      <p>
+        That’s the point.
+      </p>
+
+      <p>
+        Not endless introspection.
+        Not performative spirituality.
+        Not surface-level business coaching.
+      </p>
+
+      <p>
+        Depth. Decision. Direction.
+      </p>
+      </div>
+
+      <div class="card-section">
+      <h2>Why I Do This</h2>
+
+      <p>
+        Because I know what it means to rebuild.
+      </p>
+
+      <p>
+        Because I know what it means to carry responsibility and still choose expansion.
+      </p>
+
+      <p>
+        Because I know what it means to feel capable - but temporarily clouded.
+      </p>
+
+      <p>
+        And because I refuse to see high-potential women shrink into safe versions of themselves.
+      </p>
+
+      <p>
+        If you’re here, it’s likely not accidental.
+      </p>
+
+      <p>
+        And if you’re ready to recalibrate your identity at the root -
+        I’m here.
+      </p>
+      </div>
+
+      <!-- SECOND IMAGE SECTION -->
+      <div class="about-secondary-image">
+        <div class="image-frame">
+          <!-- Replace src with lifestyle / candid image -->
+          <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1765006135/WhatsApp_Image_2025-12-06_at_13.49.16_1_o04t6j.jpg" alt="Morgane Girault working and living in alignment">
+        </div>
+      </div>
+
+      <div class="cta">
+        <a href="identity-clarity-audit.html" class="btn-primary">
+          Begin with the Identity Clarity Audit
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <p>© 2026 Morgane Girault. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="policy.html">Privacy Policy</a>
+        <a href="legal.html">Legal Notice</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

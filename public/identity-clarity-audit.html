@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Identity Clarity Audit | Morgane Girault</title>
+<meta name="description" content="Identity Clarity Audit - A comprehensive written strategic and energetic report for ambitious women ready to clarify their positioning, authority and next-level decisions. No live session included." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --violet:#3b1d57;
+  --ivory:#f8f6f1;
+  --gold:#c6a86b;
+  --soft:#7d6f8f;
+  --white:#ffffff;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--ivory);
+  color:var(--violet);
+  line-height:1.6;
+}
+
+header{
+  background:var(--ivory);
+  padding:1.2rem 2rem;
+  border-bottom:1px solid rgba(59,29,87,0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  font-weight:600;
+}
+
+nav a{
+  margin-left:24px;
+  text-decoration:none;
+  color:var(--soft);
+  font-size:0.9rem;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.hero{
+  padding:5rem 2rem;
+  text-align:center;
+  background:var(--violet);
+  color:var(--white);
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  margin-bottom:1.2rem;
+}
+
+.hero p{
+  max-width:720px;
+  margin:0 auto 2rem auto;
+  font-size:1.1rem;
+  opacity:0.9;
+}
+
+.button{
+  display:inline-block;
+  padding:14px 28px;
+  background:var(--gold);
+  color:var(--violet);
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.button:hover{
+  opacity:0.85;
+}
+
+.section{
+  padding:4rem 2rem;
+  max-width:1100px;
+  margin:auto;
+}
+
+.section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  margin-bottom:1.5rem;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+}
+
+.card{
+  background:var(--white);
+  padding:2rem;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.price-box{
+  background:var(--white);
+  padding:2.5rem;
+  border-radius:24px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.price{
+  font-size:2rem;
+  font-weight:600;
+  margin:1rem 0;
+}
+
+footer{
+  padding:2rem;
+  text-align:center;
+  border-top:1px solid rgba(59,29,87,0.15);
+  font-size:0.85rem;
+  color:var(--soft);
+}
+
+footer a{
+  color:var(--soft);
+  text-decoration:none;
+  margin:0 10px;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:2rem;}
+}
+
+.hero-mockup{
+  margin:2rem auto 1.5rem auto;
+  max-width:340px;
+}
+
+.hero-mockup img{
+  width:100%;
+  height:auto;
+  border-radius:28px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.35);
+  display:block;
+}
+
+@media(max-width:768px){
+  .hero-mockup{
+    max-width:240px;
+  }
+}
+</style>
+  /* Motion & Animation */
+  .fade-in{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 0.9s ease forwards;
+  }
+
+  @keyframes fadeUp{
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+
+  .card{
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,0,0,0.12);
+  }
+
+  .price-box{
+    transition:transform 0.3s ease;
+  }
+
+  .price-box:hover{
+    transform:translateY(-4px);
+  }
+
+  /* FAQ */
+  .faq-item{
+    background:var(--white);
+    padding:1.8rem;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom:1.2rem;
+  }
+
+  .faq-item h3{
+    margin-top:0;
+    font-size:1.1rem;
+  }
+
+  .capacity-note{
+    margin-top:1.2rem;
+    font-weight:600;
+    color:var(--gold);
+  }
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Morgane Girault</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="identity-clarity-audit.html">Identity Clarity Audit</a>
+    <a href="mentorship.html">Mentorship</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Identity Clarity Audit</h1>
+  <p>
+    A comprehensive written strategic and energetic audit designed for ambitious women building something real. This is a structured PDF report - not a live session - delivering deep identity clarification, positioning precision and decisive next steps.
+  </p>
+  <div class="hero-mockup">
+    <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1771219462/mockup_mlwz1i.png" alt="Identity Clarity Audit mockup displayed on iPad" />
+  </div>
+  <a href="#apply" class="button">Start My Identity Clarity Audit – €240</a>
+</section>
+
+<section class="section fade-in">
+  <h2>Who This Is For</h2>
+  <div class="card-grid">
+    <div class="card">
+      You’re ambitious, intelligent, and capable - but your direction feels scattered.
+    </div>
+    <div class="card">
+      You know you’re meant for a bigger positioning, but your identity hasn’t fully caught up.
+    </div>
+    <div class="card">
+      You’re tired of surface-level advice and want deep recalibration.
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <div class="card" style="display:flex; flex-wrap:wrap; align-items:center; gap:2rem;">
+    <div style="flex:1; min-width:260px;">
+      <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1770625544/morgane.girault.charismatique_d01xpa.jpg" alt="Morgane Girault portrait" style="width:100%; max-width:340px; border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,0.15); display:block;">
+    </div>
+    <div style="flex:1; min-width:260px;">
+      <h2>Written by Morgane Girault</h2>
+      <p>
+        Identity Strategist & Energetic Recalibration Mentor.<br>
+        80+ women guided internationally in less than 3 months.<br><br>
+        My work combines strategic positioning, energetic recalibration and deep identity restructuring. 
+        This is not surface coaching. This is structural clarity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <h2>What Happens Inside</h2>
+  <div class="card-grid">
+    <div class="card">
+      Multi-layer identity and positioning analysis (strategic + energetic alignment).
+    </div>
+    <div class="card">
+      Clear articulation of your authority, strengths and natural leadership axis.
+    </div>
+    <div class="card">
+      Strategic decision mapping: what to prioritize, what to stop, what to refine.
+    </div>
+    <div class="card">
+      Integrated written guidance directly embedded throughout the report - no separate session required.
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <h2>Why This Audit Is Different</h2>
+  <div class="card-grid">
+    <div class="card">
+      Combines strategic positioning with energetic recalibration.
+    </div>
+    <div class="card">
+      Integrates transgenerational and identity pattern awareness.
+    </div>
+    <div class="card">
+      Written for execution - not reflection only.
+    </div>
+    <div class="card">
+      No fluff. No surface motivation. Structural precision.
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <h2>The Outcome</h2>
+  <p>
+    You leave with a structured identity framework, refined positioning, and a clear execution path. The Audit delivers a detailed written blueprint (25–40 pages) designed to eliminate confusion and anchor your next strategic moves.
+  </p>
+  <div class="card" style="margin-top:2rem;">
+    <p style="font-style:italic;">
+      “Before working with Morgane, everything felt blurred. After two sessions, I had a clear direction and finally started taking aligned action.”
+    </p>
+    <p style="font-weight:600; margin-top:1rem;"> Eline, Belgium</p>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>Is this the same as private mentorship?</h3>
+    <p>
+      No. This is a comprehensive written strategic and energetic audit delivered in PDF format. 
+      Mentorship includes live sessions and ongoing recalibration.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Will this tell me exactly what to do?</h3>
+    <p>
+      Yes — but strategically. You receive a structured blueprint clarifying positioning, identity alignment and priority decisions.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What if I need deeper support afterward?</h3>
+    <p>
+      You can apply for private mentorship or add the optional integration session once your Audit is delivered.
+    </p>
+  </div>
+</section>
+
+<section class="section fade-in" id="apply">
+  <div class="price-box">
+    <h2>Investment</h2>
+    <div class="price">€240</div>
+    <p>
+      Includes a comprehensive 25–40 page written Identity Clarity Audit (PDF format).<br>
+      Delivery within 7 business days.<br>
+      This offer does not include live sessions. For deeper integration, private mentorship is available separately.
+    </p>
+    <p style="font-size:0.85rem; opacity:0.8; margin-top:1rem;">
+      Prices are listed in EUR (€). Stripe automatically converts to your local currency at checkout. No hidden fees on my side.
+    </p>
+    <p class="capacity-note">Limited capacity per week to preserve depth and quality.</p>
+    <p>
+      Optional Upgrade: Add a 60‑minute private integration session after receiving your Audit.
+    </p>
+    <div class="card" style="margin-top:2rem; background:rgba(59,29,87,0.05);">
+      <h3>This Is NOT For You If:</h3>
+      <ul style="text-align:left; padding-left:1.2rem;">
+        <li>You’re looking for quick hacks.</li>
+        <li>You want surface motivation only.</li>
+        <li>You are unwilling to make decisive changes.</li>
+      </ul>
+    </div>
+    <a href="YOUR-STRIPE-LINK-HERE" class="button">Get My Identity Clarity Audit – €240</a>
+  </div>
+</section>
+
+<footer>
+  <a href="legal-notice.html">Legal Notice</a> |
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <p>© 2026 Morgane Girault</p>
+</footer>
+
+</body>
+</html>

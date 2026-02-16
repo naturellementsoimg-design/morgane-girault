@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mentorship – Morgane Girault</title>
+
+  <meta name="description" content="High-level identity and business mentorship for spiritually aware women ready to recalibrate, scale and lead from clarity. 1:1 container with strategic and energetic depth." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #3b1d57;
+      --bg-light: #f8f6f1;
+      --accent: #c6a86b;
+      --text-light: #ffffff;
+      --text-muted: #d8cfe3;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-light);
+      color: #2b1a3a;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    header nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    header nav a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    .hero {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      color: var(--text-muted);
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 480px;
+      text-align: left;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 20px;
+      border: 6px solid white;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .about-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about-photo img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 6px solid white;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+    }
+
+    .cta-buttons a {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: 0.3s ease;
+    }
+
+    .cta-primary {
+      background: var(--accent);
+      color: #2b1a3a;
+    }
+
+    .cta-secondary {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .cta-buttons a:hover {
+      opacity: 0.85;
+    }
+
+    section {
+      padding: 70px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    }
+
+    .pricing {
+      background: #f1ebf8;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .pricing h3 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .pricing .price {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: var(--bg-dark);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+      section {
+        padding: 50px 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Morgane Girault</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="hero-text">
+      <h1>You Don’t Need More Information. You Need Recalibration.</h1>
+      <p>
+      You are already successful. You are already intelligent. You are already spiritually aware.
+      But your identity has not fully aligned with the level you are meant to hold.
+      This 3-month private mentorship is designed to collapse internal noise, clarify your next strategic move,
+      and expand your leadership without burning your nervous system.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="https://book.stripe.com/bJe00c9LXciS4vA1xN8k82O" class="cta-primary">Pay in Full – 2222€</a>
+        <a href="https://buy.stripe.com/3cI6oA7DPgz82ns5O38k82N" class="cta-secondary">3 Payments – 755€</a>
+      </div>
+
+      <p style="margin-top:20px;font-size:15px;color:var(--text-muted);">
+      Private 1:1 container · High-level women only · Direct decision access
+      </p>
+      <p style="margin-top:10px;font-size:14px;color:var(--text-muted);">
+Prices are displayed in EUR. If you are paying from outside the Eurozone, Stripe automatically converts the amount into your local currency at checkout. No hidden fees.
+      </p>
+    </div>
+
+    <div class="hero-image">
+      <!-- Replace src with your main professional photo -->
+      <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1770631460/PHOTO-2026-02-09-17-04-07_cb1kpo.jpg" alt="Morgane Girault – Identity & Business Mentor">
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>This Mentorship Is For You If…</h2>
+
+  <p style="max-width:750px;margin-bottom:30px;color:#5a476d;">
+This is not for beginners. This is for women who already move - but are ready to move cleaner, faster and from a higher identity.
+  </p>
+
+  <div class="card">
+    You are already generating income but feel misaligned, scattered or under-expressed.
+  </div>
+
+  <div class="card">
+    You know you are meant for more impact - but your identity has not fully caught up with your vision.
+  </div>
+
+  <div class="card">
+    You want depth. Strategy. Energetic recalibration. Not surface-level coaching.
+  </div>
+
+</section>
+
+<section>
+  <h2>What Makes This Different</h2>
+
+  <div class="card">
+<strong>Identity Before Strategy.</strong><br><br>
+We recalibrate who you are being before scaling what you are doing.
+Your income ceiling is always an identity ceiling.
+  </div>
+
+  <div class="card">
+<strong>Energetic + Strategic Precision.</strong><br><br>
+I read patterns transgenerationally, psychologically and energetically.
+We remove distortions at the root - not at surface level.
+  </div>
+
+  <div class="card">
+<strong>Execution Without Chaos.</strong><br><br>
+You receive personalized strategic workbooks and clear action sequencing.
+No overwhelm. No scattered moves. Only aligned expansion.
+  </div>
+
+</section>
+
+<section class="pricing">
+  <h3>3-Month Private Mentorship</h3>
+  <div class="price">2222€</div>
+  <p>
+6 private 90-min sessions · Deep identity recalibration · Strategic positioning refinement ·
+Personalized expansion roadmap · Direct messaging support between sessions.
+  </p>
+
+  <div class="cta-buttons">
+    <a href="https://book.stripe.com/bJe00c9LXciS4vA1xN8k82O" class="cta-primary">Pay in Full</a>
+    <a href="https://buy.stripe.com/3cI6oA7DPgz82ns5O38k82N" class="cta-secondary">Pay in 3</a>
+  </div>
+  <p style="margin-top:15px;font-size:14px;color:#5a476d;">
+Payments are securely processed via Stripe. International clients automatically see their local currency conversion at checkout.
+  </p>
+
+  <p style="margin-top:25px;font-size:15px;color:#5a476d;">
+Limited to a small number of private clients per quarter to maintain depth and precision.
+If you feel the pull, it’s because you’re ready.
+  </p>
+</section>
+
+<section>
+  <h2>About Morgane</h2>
+  <div class="about-photo">
+    <!-- Replace src with a lifestyle or second professional image -->
+    <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1771206701/WhatsApp_Image_2026-02-16_at_08.51.00_kyvkm1.jpg" alt="Morgane Girault – Mentor and Mother">
+  <img src="https://res.cloudinary.com/diapyc6q1/image/upload/v1771217162/WhatsApp_Image_2026-02-16_at_11.44.59_v8ifts.jpg" alt="Morgane Girault – Mentor and Mother">
+  </div>
+  <div class="card">
+<strong>Morgane Girault - Identity Strategist & Intuitive Mentor.</strong><br><br>
+Mother of two. Former multi-business entrepreneur. 
+I left the conventional path to build an international location-independent life aligned with my values.
+Over 80 women guided through strategic and energetic recalibration.
+My work blends structure, intuition and unapologetic clarity.
+  </div>
+  <div class="cta-buttons" style="margin-top:40px; text-align:center;">
+    <a href="https://book.stripe.com/bJe00c9LXciS4vA1xN8k82O" class="cta-primary">Enter the 3-Month Container</a>
+  </div>
+</section>
+
+<footer>
+  <a href="policy.html">Privacy Policy</a>
+  <a href="legal.html">Legal Notice</a>
+  <p>© Morgane Girault</p>
+</footer>
+
+</body>
+</html>

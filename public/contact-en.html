@@ -154,22 +154,34 @@
       outline: none;
     }
 
-    .logo {
-      font-family: var(--font-serif);
-      font-weight: 600;
-      letter-spacing: 0.5px;
+ nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(28, 16, 36, 0.95);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      padding: 15px 0;
     }
-
+    nav .nav-container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     nav a {
-      margin-left: 28px;
-      font-size: 14px;
-      color: var(--color-grey);
-      text-transform: none;
-      letter-spacing: normal;
+      color: #f8f6fb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
     }
-
-    nav a[aria-current="page"] {
-      color: var(--color-black);
+    nav a:hover {
+      opacity: 0.7;
     }
   </style>
 </head>

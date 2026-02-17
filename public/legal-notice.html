@@ -37,26 +37,35 @@ header{
   align-items:center;
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
-
-.logo{
-  font-family:'Playfair Display',serif;
-  font-size:20px;
-  color:var(--text-light);
-  letter-spacing:0.5px;
-}
-
-nav a{
-  color:var(--text-light);
-  text-decoration:none;
-  margin-left:32px;
-  font-size:14px;
-  transition:opacity .3s ease;
-}
-
-nav a:hover{
-  opacity:.7;
-}
-
+ nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(28, 16, 36, 0.95);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    nav .nav-container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #f8f6fb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
+    nav a:hover {
+      opacity: 0.7;
+    }
 /* MAIN */
 main{
   background:var(--bg-light);

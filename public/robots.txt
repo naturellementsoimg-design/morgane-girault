@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://morgane-girault.com/sitemap.xml

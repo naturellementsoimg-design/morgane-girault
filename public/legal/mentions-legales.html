@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mentions légales | Morgane Girault</title>
+
+  <meta
+    name="description"
+    content="Mentions légales du site morgane-girault.com, édité par Morgane Girault sous le nom d’activité Naturellement Soi."
+  />
+
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#190B40" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --deep-plum: #190B40;
+      --soft-plum: #2C1658;
+      --plum: #190B40;
+      --plum-soft: #2C1658;
+      --line: rgba(25, 11, 64, 0.12);
+      --sage: #B8D8C5;
+      --sage-light: #EEF7F1;
+      --lavender: #9F95F1;
+      --lavender-light: #EEEAFE;
+      --gold-light: #F2E3BF;
+      --ivory: #FBF8F3;
+      --white: #FFFFFF;
+      --ink: #2A2330;
+      --muted: #6F6875;
+      --border: rgba(25, 11, 64, 0.12);
+      --shadow: 0 18px 50px rgba(25, 11, 64, 0.08);
+      --radius-xl: 36px;
+      --radius-lg: 26px;
+      --container: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--ivory);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    .brand-name {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      font-size: clamp(3rem, 7vw, 5.9rem);
+      line-height: 0.96;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      color: var(--deep-plum);
+    }
+
+    h2 {
+      margin: 0 0 22px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      font-weight: 600;
+      color: var(--deep-plum);
+    }
+
+    h3 {
+      margin: 28px 0 12px;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      color: var(--deep-plum);
+    }
+
+    p,
+    li {
+      color: #514A56;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    strong {
+      color: var(--ink);
+    }
+
+    
+    .site-header {
+      position: sticky;
+      z-index: 60;
+      top: 0;
+      border-bottom: 1px solid rgba(25, 11, 64, 0.08);
+      background: rgba(251, 248, 243, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), 1180px);
+      display: flex;
+      min-height: 84px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 13px;
+      color: var(--plum);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      border: 1px solid rgba(25, 11, 64, 0.24);
+      border-radius: 50%;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      position: absolute;
+      border-radius: 999px;
+      background: #9f9f5f;
+      content: "";
+    }
+
+    .brand-mark::before {
+      width: 18px;
+      height: 1px;
+      top: 18px;
+      left: 9px;
+      transform: rotate(42deg);
+    }
+
+    .brand-mark::after {
+      width: 1px;
+      height: 18px;
+      top: 9px;
+      left: 18px;
+      transform: rotate(42deg);
+    }
+
+    .desktop-nav {
+      display: flex;
+      flex: 0 1 auto;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      color: #4e4557;
+      font-size: 0.92rem;
+    }
+
+    .desktop-nav a {
+      position: relative;
+      white-space: nowrap;
+      transition: color 160ms ease;
+    }
+
+    .desktop-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: -9px;
+      left: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: #9f9f5f;
+      content: "";
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 160ms ease;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a:focus-visible,
+    .desktop-nav a[aria-current="page"] {
+      color: var(--plum);
+    }
+
+    .desktop-nav a:hover::after,
+    .desktop-nav a:focus-visible::after,
+    .desktop-nav a[aria-current="page"]::after {
+      transform: scaleX(1);
+    }
+
+    .header-actions {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-actions .button {
+      display: inline-flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 750;
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
+    }
+
+    .header-actions .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--plum);
+      box-shadow: 0 14px 34px rgba(25, 11, 64, 0.19);
+    }
+
+    .button-primary:hover {
+      background: var(--plum-soft);
+      box-shadow: 0 18px 42px rgba(25, 11, 64, 0.25);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(25, 11, 64, 0.16);
+      border-radius: 50%;
+      color: var(--plum);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      z-index: 59;
+      inset: 84px 0 0;
+      overflow-y: auto;
+      padding: 30px 20px 42px;
+      background: var(--ivory);
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu nav {
+      display: grid;
+      gap: 8px;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .mobile-menu a {
+      padding: 16px 4px;
+      border-bottom: 1px solid var(--line);
+      color: var(--plum);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+    }
+
+    .mobile-menu .button {
+      display: inline-flex;
+      width: 100%;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      padding: 15px 24px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 750;
+    }
+
+
+    .hero {
+      padding: 110px 0 80px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(238, 234, 254, 0.96), transparent 36%),
+        radial-gradient(circle at 90% 12%, rgba(238, 247, 241, 0.95), transparent 35%),
+        linear-gradient(180deg, var(--ivory), #FFFFFF);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #315F4B;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .lead {
+      max-width: 800px;
+      font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+    }
+
+    .update {
+      display: inline-flex;
+      margin-top: 18px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--deep-plum);
+    }
+
+    .notice {
+      margin-top: 34px;
+      padding: 24px 26px;
+      border: 1px solid rgba(49, 95, 75, 0.16);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--sage-light), #FFFFFF);
+    }
+
+    .notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .toc-section {
+      padding: 55px 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc a {
+      display: block;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--ivory);
+      color: var(--deep-plum);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .legal {
+      padding: 85px 0 110px;
+      background: linear-gradient(180deg, #FFFFFF, var(--ivory));
+    }
+
+    .legal-card {
+      margin-bottom: 22px;
+      padding: 38px;
+      scroll-margin-top: 105px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+    }
+
+    .legal-card.highlight {
+      background:
+        radial-gradient(circle at 95% 0%, rgba(242, 227, 191, 0.68), transparent 34%),
+        linear-gradient(135deg, var(--sage-light), #FFFFFF);
+    }
+
+    .legal-card.personal {
+      background:
+        radial-gradient(circle at 95% 0%, rgba(238, 234, 254, 0.85), transparent 34%),
+        #FFFFFF;
+    }
+
+    .legal-number {
+      display: inline-grid;
+      min-width: 42px;
+      height: 42px;
+      place-items: center;
+      margin-bottom: 18px;
+      padding: 0 12px;
+      border-radius: 14px;
+      color: var(--white);
+      background: var(--deep-plum);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .identity-box {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: #F7F4F8;
+    }
+
+    .definition {
+      margin: 22px 0;
+      padding: 20px 22px;
+      border-left: 4px solid #315F4B;
+      border-radius: 0 16px 16px 0;
+      background: var(--sage-light);
+    }
+
+    .warning {
+      margin: 22px 0;
+      padding: 20px 22px;
+      border-left: 4px solid var(--lavender);
+      border-radius: 0 16px 16px 0;
+      background: var(--lavender-light);
+    }
+
+    .text-link {
+      color: var(--soft-plum);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .site-footer {
+      color: rgba(255, 255, 255, 0.72);
+      background: #12072E;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 44px 0;
+    }
+
+    .footer-wrap .brand-name {
+      color: var(--white);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 1160px) {
+      .desktop-nav,
+      .header-actions .button {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .hero {
+        padding: 85px 0 65px;
+      }
+
+      .toc {
+        grid-template-columns: 1fr;
+      }
+
+      .legal {
+        padding: 65px 0 85px;
+      }
+
+      .legal-card {
+        padding: 27px 23px;
+      }
+
+      .footer-wrap {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Morgane Girault — Accueil">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Morgane Girault</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="/commencer">Commencer</a>
+      <a href="/seance-passage">Séance Passage</a>
+      <a href="/architecture-de-l-incarnation">Architecture de l’Incarnation</a>
+      <a href="/a-propos">À propos</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="button button-primary" href="/commencer">
+        Trouver mon point de départ
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav aria-label="Navigation mobile">
+    <a href="/">Accueil</a>
+    <a href="/commencer">Commencer</a>
+    <a href="/seance-passage">Séance Passage</a>
+    <a href="/architecture-de-l-incarnation">Architecture de l’Incarnation</a>
+    <a href="/a-propos">À propos</a>
+    <a class="button button-primary" href="/commencer">
+      Trouver mon point de départ
+    </a>
+  </nav>
+</div>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Informations relatives au site</p>
+
+    <h1>Mentions légales</h1>
+
+    <p class="lead">
+      Cette page présente l’identité de l’éditrice du site,
+      les informations relatives à son hébergement,
+      ainsi que les règles applicables aux contenus publiés sur morgane-girault.com.
+    </p>
+
+    <span class="update">Dernière mise à jour : 27 juillet 2026</span>
+
+    <div class="notice">
+      <p>
+        Le site est actuellement édité par Morgane GIRAULT,
+        agissant en son nom propre sous le nom d’activité Naturellement Soi,
+        dans le cadre de prestations fournies exclusivement à distance
+        auprès d’une clientèle internationale.
+      </p>
+
+      <p>
+        Les informations relatives à une future structure juridique
+        seront ajoutées dès sa création officielle.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="toc-section">
+  <div class="container">
+    <ul class="toc">
+      <li><a href="#edition">1. Édition du site</a></li>
+      <li><a href="#publication">2. Direction de la publication</a></li>
+      <li><a href="#contact">3. Contact</a></li>
+      <li><a href="#hebergement">4. Hébergement</a></li>
+      <li><a href="#propriete">5. Propriété intellectuelle</a></li>
+      <li><a href="#contenus">6. Nature des contenus</a></li>
+      <li><a href="#responsabilite">7. Responsabilité</a></li>
+      <li><a href="#liens">8. Liens externes</a></li>
+      <li><a href="#donnees">9. Données personnelles et cookies</a></li>
+      <li><a href="#disponibilite">10. Disponibilité du site</a></li>
+      <li><a href="#droit">11. Cadre applicable</a></li>
+      <li><a href="#mise-a-jour">12. Mise à jour</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="container">
+
+    <article class="legal-card highlight" id="edition">
+      <span class="legal-number">1</span>
+      <h2>Édition du site</h2>
+
+      <p>
+        Le site <strong>morgane-girault.com</strong>
+        est édité par :
+      </p>
+
+      <div class="identity-box">
+        <span><strong>Éditrice :</strong> Morgane GIRAULT, agissant en son nom propre</span>
+        <span><strong>Nom d’activité :</strong> Naturellement Soi</span>
+        <span><strong>Marque personnelle :</strong> Morgane Girault</span>
+        <span><strong>Nature du site :</strong> site professionnel de présentation et de vente de prestations et contenus à distance</span>
+        <span><strong>Clientèle :</strong> internationale</span>
+        <span><strong>Site internet :</strong> morgane-girault.com</span>
+      </div>
+
+    </article>
+
+    <article class="legal-card" id="publication">
+      <span class="legal-number">2</span>
+      <h2>Direction de la publication</h2>
+
+      <p>
+        La directrice de la publication
+        et responsable éditoriale du site est :
+      </p>
+
+      <p><strong>Morgane GIRAULT</strong></p>
+
+      <p>
+        Elle décide des contenus publiés
+        et veille à leur cohérence avec l’univers,
+        les recherches et les activités présentés sur le site.
+      </p>
+    </article>
+
+    <article class="legal-card personal" id="contact">
+      <span class="legal-number">3</span>
+      <h2>Contact</h2>
+
+      <div class="identity-box">
+        <span>
+          <strong>Adresse électronique :</strong>
+          <a class="text-link" href="mailto:morgane.girault@naturellement-soi.com">
+            morgane.girault@naturellement-soi.com
+          </a>
+        </span>
+
+        <span>
+          <strong>WhatsApp :</strong>
+          <a
+            class="text-link"
+            href="https://wa.me/34631632482"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +34 631 632 482
+          </a>
+        </span>
+      </div>
+
+      <p>
+        Pour toute question relative au site,
+        à une commande,
+        à une prestation
+        ou à l’exercice d’un droit,
+        le contact écrit est privilégié
+        afin de conserver une trace des échanges.
+      </p>
+    </article>
+
+    <article class="legal-card highlight" id="hebergement">
+      <span class="legal-number">4</span>
+      <h2>Hébergement du site</h2>
+
+      <p>Le site est hébergé par :</p>
+
+      <div class="identity-box">
+        <span><strong>Hébergeur :</strong> Vercel Inc.</span>
+        <span><strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</span>
+        <span><strong>Numéro d’enregistrement :</strong> Delaware 5857312</span>
+        <span>
+          <strong>Contact :</strong>
+          <a class="text-link" href="mailto:privacy@vercel.com">
+            privacy@vercel.com
+          </a>
+        </span>
+        <span>
+          <strong>Site :</strong>
+          <a
+            class="text-link"
+            href="https://vercel.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            vercel.com
+          </a>
+        </span>
+      </div>
+
+      <p>
+        Le nom de domaine est enregistré
+        par l’intermédiaire de Vercel.
+      </p>
+    </article>
+
+    <article class="legal-card" id="propriete">
+      <span class="legal-number">5</span>
+      <h2>Propriété intellectuelle</h2>
+
+      <p>
+        Sauf mention contraire,
+        l’ensemble des contenus présents sur le site,
+        notamment les textes,
+        concepts,
+        méthodes,
+        recherches,
+        noms d’offres,
+        structures,
+        schémas,
+        photographies,
+        visuels,
+        audios,
+        vidéos,
+        SoulMaps,
+        protocoles
+        et éléments graphiques,
+        sont protégés par les règles applicables
+        à la propriété intellectuelle.
+      </p>
+
+      <p>
+        Ils sont la propriété de Morgane GIRAULT
+        ou sont utilisés avec l’autorisation
+        de leurs titulaires respectifs.
+      </p>
+
+      <p>
+        Toute reproduction,
+        représentation,
+        modification,
+        diffusion,
+        adaptation,
+        extraction substantielle,
+        utilisation commerciale
+        ou mise à disposition d’un tiers
+        sans autorisation écrite préalable
+        est interdite.
+      </p>
+
+      <p>
+        Les dénominations
+        <strong>Morgane Girault</strong>,
+        <strong>Naturellement Soi</strong>,
+        <strong>Architecture de l’Incarnation</strong>,
+        <strong>SoulMap</strong>
+        et les noms des offres associées
+        ne peuvent être utilisés
+        d’une manière susceptible de créer
+        une confusion sur l’origine des services.
+      </p>
+    </article>
+
+    <article class="legal-card personal" id="contenus">
+      <span class="legal-number">6</span>
+      <h2>Nature des contenus publiés</h2>
+
+      <p>
+        Le site présente des contenus
+        liés à la médiumnité,
+        à la lecture symbolique et énergétique,
+        à l’introspection,
+        à l’identité,
+        aux passages de vie,
+        à l’incarnation
+        et, selon les pages,
+        à l’activité professionnelle.
+      </p>
+
+      <p>
+        Ces contenus ont une vocation
+        informative,
+        réflexive,
+        spirituelle,
+        pédagogique
+        ou commerciale.
+      </p>
+
+      <p>
+        Ils ne constituent pas
+        un diagnostic,
+        une prescription,
+        un traitement
+        ni un conseil médical,
+        psychologique,
+        psychiatrique,
+        juridique,
+        fiscal
+        ou financier personnalisé.
+      </p>
+
+      <p>
+        Les personnes qui consultent le site
+        restent responsables
+        de l’usage qu’elles font
+        des informations présentées
+        et sont invitées à consulter
+        un professionnel qualifié
+        lorsque leur situation l’exige.
+      </p>
+    </article>
+
+    <article class="legal-card" id="responsabilite">
+      <span class="legal-number">7</span>
+      <h2>Responsabilité</h2>
+
+      <p>
+        Morgane GIRAULT s’efforce
+        de fournir des informations
+        claires, exactes et actualisées.
+        Elle ne garantit toutefois pas
+        l’absence totale d’erreur,
+        d’omission
+        ou d’interruption.
+      </p>
+
+      <p>
+        Les contenus généraux du site
+        ne remplacent pas
+        une analyse personnalisée
+        de la situation d’une personne.
+      </p>
+
+      <p>
+        Morgane GIRAULT ne peut être tenue responsable
+        d’une décision prise exclusivement
+        sur la base d’un contenu gratuit,
+        d’un article,
+        d’une chronique,
+        d’une publication
+        ou d’une information générale du site.
+      </p>
+
+      <p>
+        La responsabilité relative
+        aux prestations achetées
+        est encadrée par les
+        <a class="text-link" href="/legal/conditions-generales">
+          Conditions générales de vente
+        </a>.
+      </p>
+    </article>
+
+    <article class="legal-card" id="liens">
+      <span class="legal-number">8</span>
+      <h2>Liens externes et services tiers</h2>
+
+      <p>
+        Le site peut contenir des liens
+        vers des plateformes externes,
+        notamment des outils de paiement,
+        de réservation,
+        de visioconférence,
+        d’hébergement d’images,
+        de communication
+        ou des réseaux sociaux.
+      </p>
+
+      <p>
+        Ces services sont exploités
+        sous la responsabilité
+        de leurs éditeurs respectifs.
+        Morgane GIRAULT ne contrôle pas
+        en permanence leur contenu,
+        leur disponibilité
+        ni leurs pratiques.
+      </p>
+
+      <p>
+        La consultation ou l’utilisation
+        d’un service tiers
+        peut être soumise
+        à ses propres conditions d’utilisation
+        et à sa propre politique de confidentialité.
+      </p>
+    </article>
+
+    <article class="legal-card highlight" id="donnees">
+      <span class="legal-number">9</span>
+      <h2>Données personnelles et cookies</h2>
+
+      <p>
+        Les informations relatives
+        à la collecte,
+        à l’utilisation,
+        au stockage
+        et à la protection des données personnelles
+        sont détaillées dans la
+        <a class="text-link" href="/legal/politique-confidentialite">
+          Politique de confidentialité
+        </a>.
+      </p>
+
+      <p>
+        Les informations relatives
+        aux cookies,
+        traceurs
+        et technologies similaires
+        figurent dans la
+        <a class="text-link" href="/legal/politique-cookies">
+          Politique relative aux cookies
+        </a>.
+      </p>
+
+      <p>
+        Lorsque le consentement est requis,
+        le dépôt de cookies non essentiels
+        ne doit intervenir
+        qu’après le choix de l’utilisatrice.
+      </p>
+    </article>
+
+    <article class="legal-card" id="disponibilite">
+      <span class="legal-number">10</span>
+      <h2>Disponibilité et sécurité du site</h2>
+
+      <p>
+        L’accès au site peut être interrompu
+        temporairement,
+        notamment pour maintenance,
+        mise à jour,
+        incident technique,
+        évolution des services tiers
+        ou événement indépendant
+        de la volonté de l’éditrice.
+      </p>
+
+      <p>
+        Aucun accès permanent,
+        continu
+        ou exempt de toute anomalie
+        ne peut être garanti.
+      </p>
+
+      <p>
+        Les utilisatrices sont invitées
+        à utiliser un équipement à jour
+        et à prendre les mesures habituelles
+        de sécurité numérique.
+      </p>
+    </article>
+
+    <article class="legal-card personal" id="droit">
+      <span class="legal-number">11</span>
+      <h2>Cadre applicable</h2>
+
+      <p>
+        Le site est destiné
+        à une clientèle internationale
+        et présente des prestations
+        fournies exclusivement à distance.
+      </p>
+
+      <p>
+        Les règles applicables
+        à l’utilisation du site
+        et aux relations contractuelles
+        sont déterminées,
+        selon les situations,
+        par les règles de droit
+        et de droit international privé
+        effectivement applicables.
+      </p>
+
+      <p>
+        Aucune mention présente sur le site
+        ne peut avoir pour effet
+        d’écarter une disposition impérative
+        qui serait applicable
+        à l’éditrice
+        ou à une utilisatrice.
+      </p>
+    </article>
+
+    <article class="legal-card" id="mise-a-jour">
+      <span class="legal-number">12</span>
+      <h2>Mise à jour des mentions légales</h2>
+
+      <p>
+        Les présentes mentions légales
+        peuvent être modifiées
+        afin de tenir compte
+        d’une évolution du site,
+        des outils utilisés,
+        des activités proposées
+        ou de la future création
+        d’une structure juridique dédiée.
+      </p>
+
+      <p>
+        La version publiée en ligne
+        est celle applicable
+        à la date de consultation.
+      </p>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <a class="brand" href="/">
+      <span class="brand-name">Morgane Girault</span>
+      <span class="brand-subtitle">Architecture de l’Incarnation</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="/legal/mentions-legales">Mentions légales</a>
+      <a href="/legal/conditions-generales">CGV</a>
+     <a href="/legal/confidentialite-cookies"> Confidentialité & cookies
+    </a>
+      <a href="/">Retour au site</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
+
+  function setMenu(open) {
+    if (!menuToggle || !mobileMenu) return;
+
+    mobileMenu.classList.toggle("open", open);
+    mobileMenu.setAttribute("aria-hidden", String(!open));
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute(
+      "aria-label",
+      open ? "Fermer le menu" : "Ouvrir le menu"
+    );
+    menuToggle.querySelector("span").textContent = open ? "×" : "☰";
+    document.body.classList.toggle("menu-open", open);
+  }
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      setMenu(!mobileMenu.classList.contains("open"));
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenu(false);
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

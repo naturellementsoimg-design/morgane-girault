@@ -2,7 +2,10 @@
   "name": "morgane-girault-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Site officiel Morgane Girault – Mentorat de décision & repositionnement high-level",
-  "scripts": {},
+  "description": "Morgane Girault — music, intuitive clarity and focused digital services in English and French",
+  "scripts": {
+    "build": "python3 scripts/build_site.py",
+    "check": "python3 scripts/check_site.py && node --check public/assets/js/main.js"
+  },
   "license": "UNLICENSED"
 }

@@ -1,0 +1,269 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "outputDirectory": "public",
+  "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/en/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/music/",
+      "destination": "/en/music.html",
+      "permanent": true
+    },
+    {
+      "source": "/music",
+      "destination": "/en/music.html",
+      "permanent": true
+    },
+    {
+      "source": "/music/warm-and-deep/",
+      "destination": "/en/music.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/en/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/en/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/en/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-en.html",
+      "destination": "/en/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/a-propos",
+      "destination": "/fr/a-propos.html",
+      "permanent": true
+    },
+    {
+      "source": "/commencer",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/architecture-de-l-incarnation",
+      "destination": "/en/research.html",
+      "permanent": true
+    },
+    {
+      "source": "/journal/",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/journal",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/linktree.html",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/linktree-en.html",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/identity-clarity-audit.html",
+      "destination": "/en/intuitive-career-business-clarity.html",
+      "permanent": true
+    },
+    {
+      "source": "/mentorship.html",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/mentions-legales.html",
+      "destination": "/legal/mentions-legales.html",
+      "permanent": true
+    },
+    {
+      "source": "/politique-confidentialite.html",
+      "destination": "/legal/confidentialite-cookies.html",
+      "permanent": true
+    },
+    {
+      "source": "/legal/mentions-legales",
+      "destination": "/legal/mentions-legales.html",
+      "permanent": true
+    },
+    {
+      "source": "/legal/conditions-generales",
+      "destination": "/legal/conditions-generales.html",
+      "permanent": true
+    },
+    {
+      "source": "/legal/confidentialite-cookies",
+      "destination": "/legal/confidentialite-cookies.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/books.html",
+      "destination": "/en/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/media.html",
+      "destination": "/en/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/private-sessions.html",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/fr/livres.html",
+      "destination": "/fr/a-propos.html",
+      "permanent": true
+    },
+    {
+      "source": "/fr/medias.html",
+      "destination": "/fr/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/fr/recherches.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/fr/temoignages.html",
+      "destination": "/fr/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/chroniques/",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/chroniques/index.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/chroniques/comprehension-incarnation.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/chroniques/repetition-architecturale.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/recherches/",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/recherches/index.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/recherches/discordance-incarnation.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/recherches/plafonds-invisibles.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/recherches/repetition-architecturale.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/recherches/retour-au-corps.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    },
+    {
+      "source": "/recherches/vide-structurant.html",
+      "destination": "/fr/architecture-de-l-incarnation.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/post-achats/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/assets/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
+}

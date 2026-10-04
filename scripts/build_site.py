@@ -88,7 +88,7 @@ def request_url(key,lang): return path('contact',lang)+'?service='+key
 def service_url(key,lang): return SERVICE_CHECKOUTS.get(key) or request_url(key,lang)
 def header(key,lang):
     l=LABELS[lang]; other='fr' if lang=='en' else 'en'
-    items=''.join(f'<li><a href="{path(k,lang)}"'+(' aria-current="page"' if k==key else '')+f'>{l[k]}</a></li>' for k in ['music','services','about','contact'])
+    items=''.join(f'<li><a href="{path(k,lang)}"'+(' aria-current="page"' if k==key else '')+f'>{("Support" if lang=="en" else "Soutenir") if k=="support" else l[k]}</a></li>' for k in ['music','services','support','about','contact'])
     return f'''<a class="skip-link" href="#main">{l['skip']}</a><header class="site-header"><nav class="nav" aria-label="{'Main navigation' if lang=='en' else 'Navigation principale'}"><a class="logo" href="{path('home',lang)}">Morgane Girault</a><button class="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="primary-navigation">{l['menu']}</button><ul class="nav-links" id="primary-navigation">{items}<li><a class="language" href="{path(key,other)}" lang="{other}" hreflang="{other}" aria-label="{'Lire cette page en français' if other=='fr' else 'Read this page in English'}">{other.upper()}</a></li></ul></nav></header>'''
 
 def footer(lang):
@@ -97,6 +97,9 @@ def footer(lang):
 
 def metadata(key,lang,title,description,service=None,stylesheet='global.css',include_script=True):
     url=DOMAIN+path(key,lang)
+    if stylesheet!='global.css':
+        css_version=hashlib.sha256((PUBLIC/'assets/css'/stylesheet).read_bytes()).hexdigest()[:12]
+        stylesheet+='?v='+css_version
     script_version=hashlib.sha256((PUBLIC/'assets/js/main.js').read_bytes()).hexdigest()[:12]
     graph=[{'@type':'Person','@id':DOMAIN+'/#morgane','name':'Morgane Girault','url':DOMAIN+'/', 'image':PORTRAIT,'jobTitle':'Artist, songwriter, medium and soul cartographer','sameAs':[SPOTIFY,APPLE,YOUTUBE,INSTAGRAM]}, {'@type':'WebPage','@id':url+'#page','url':url,'name':title,'description':description,'inLanguage':lang,'isPartOf':{'@id':DOMAIN+'/#website'},'about':{'@id':DOMAIN+'/#morgane'}}]
     if key=='home': graph.append({'@type':'WebSite','@id':DOMAIN+'/#website','name':'Morgane Girault','url':DOMAIN+'/','inLanguage':['en','fr'],'publisher':{'@id':DOMAIN+'/#morgane'}})
@@ -126,10 +129,11 @@ def support(lang):
     en=lang=='en'
     copy = {
         'en': {
-            'title':'Support My Music & Creative Projects',
-            'description':'Support Morgane Girault’s music and creative projects. Contribute €10, €20, €50 or €100 through Stripe to help new songs and melodies take shape.',
+            'title':'Online Fundraiser for Music & Creative Projects',
+            'description':'Support Morgane Girault’s music through her online fundraiser. Contributions of €10, €20, €50 or €100 help new songs, melodies and creative projects take shape.',
+            'kicker':'Online music fundraiser',
             'heading':'Support my music<br>& creative projects.',
-            'intro':'If a song, a melody or a few words of mine have stayed with you, you can help me keep creating. Choose the contribution that feels right for you.',
+            'intro':'If a song, a melody or a few words of mine have stayed with you, this online fundraiser is a way to support my music and creative projects. Choose the contribution that feels right for you.',
             'labels':['A little encouragement','Support my next creation','A generous contribution','A beautiful boost'],
             'note':'Every contribution supports the time and space to write songs, compose melodies and bring my creative projects to life. Thank you for being part of the music.',
             'secure':'Secure payment via Stripe · EUR',
@@ -137,10 +141,11 @@ def support(lang):
             'languages':'Page language',
         },
         'fr': {
-            'title':'Soutenir ma musique et mes projets',
-            'description':'Soutiens la musique et les projets créatifs de Morgane Girault. Contribue à hauteur de 10, 20, 50 ou 100 € via Stripe pour aider de nouvelles créations à voir le jour.',
+            'title':'Cagnotte en ligne pour ma musique et mes projets',
+            'description':'La cagnotte en ligne de Morgane Girault pour soutenir sa musique, ses chansons et ses projets créatifs. Contributions de 10, 20, 50 ou 100 € via Stripe.',
+            'kicker':'Ma cagnotte en ligne',
             'heading':'Soutiens ma musique<br>et mes projets.',
-            'intro':'Si une chanson, une mélodie ou quelques mots de moi t’ont accompagnée, tu peux m’aider à continuer de créer. Choisis la contribution qui te correspond.',
+            'intro':'Si une chanson, une mélodie ou quelques mots de moi ont accompagné un moment de ta vie, cette cagnotte en ligne te permet de soutenir ma musique et mes projets créatifs. Choisis la contribution qui te correspond.',
             'labels':['Un petit encouragement','Soutenir ma prochaine création','Un soutien précieux','Un bel élan pour mes projets'],
             'note':'Chaque contribution soutient le temps et l’espace nécessaires pour écrire des chansons, composer des mélodies et donner vie à mes projets créatifs. Merci de faire partie de cette aventure musicale.',
             'secure':'Paiement sécurisé via Stripe · EUR',
@@ -157,6 +162,7 @@ def support(lang):
 <section class="support-card" aria-labelledby="support-heading"><div class="support-content">
 <div class="brand">Morgane Girault</div>
 <img class="support-portrait" src="{PORTRAIT}" alt="Morgane Girault" width="136" height="136" fetchpriority="high">
+<p class="support-kicker">{copy['kicker']}</p>
 <h1 id="support-heading">{copy['heading']}</h1>
 <p class="intro">{esc(copy['intro'])}</p>
 <div class="support-links">{contributions}</div>
@@ -288,13 +294,18 @@ def adapt_legal():
             text=re.sub(r'href=["\'](?:index\.html|/)["\']',f'href="{path("home",lang)}"',text)
             text=re.sub(r'href=["\'](?:contact\.html|contact-en\.html|/contact|/commencer)["\']',f'href="{path("contact",lang)}"',text)
             other_lang='fr' if lang=='en' else 'en'
-            nav=''.join(link(path(key,lang),LABELS[lang][key],'') for key in ['home','music','services','about','contact'])
+            nav=''.join(link(path(key,lang),LABELS[lang][key],'') for key in ['home','music','services','support','about','contact'])
             nav+=f'<a href="/{other}" lang="{other_lang}" hreflang="{other_lang}">{other_lang.upper()}</a>'
             text=re.sub(r'(<nav\b[^>]*(?:class="(?:nav-links|desktop-nav)"|aria-label="Navigation mobile")[^>]*>).*?</nav>',lambda m:m.group(1)+nav+'</nav>',text,flags=re.S)
             for old,key in {'/seance-passage':'clarity','/architecture-de-l-incarnation':'approach','/a-propos':'about'}.items():
                 text=text.replace(f'href="{old}"',f'href="{path(key,lang)}"')
             for old in ['/legal/politique-confidentialite','/legal/politique-cookies']:
                 text=text.replace(f'href="{old}"','href="/legal/confidentialite-cookies.html"')
+            support_link=link(path('support',lang),LABELS[lang]['support'],'')
+            if lang=='fr':
+                text=text.replace('<div class="footer-links">','<div class="footer-links">'+support_link,1)
+            else:
+                text=text.replace('<footer>','<footer>'+support_link,1)
             f.write_text(clean_blank_lines(text))
 
 def preserve_architecture():
@@ -305,7 +316,7 @@ def preserve_architecture():
     source=source.replace('</head>',f'<link rel="canonical" href="{DOMAIN+path("approach","fr")}"><link rel="alternate" hreflang="fr" href="{DOMAIN+path("approach","fr")}"><link rel="alternate" hreflang="en" href="{DOMAIN+path("approach","en")}"><link rel="alternate" hreflang="x-default" href="{DOMAIN+path("approach","en")}"><style>.updated-footer{{padding:45px 0;background:#110d0e;color:#fffdf9}}.updated-footer a{{display:inline-block;margin:8px 18px 8px 0;color:#f5efe8}}.header-actions .language-switch{{font-weight:700;padding:10px}}</style></head>')
     source=source.replace('<main>','<main id="main">')
     source=re.sub(r'(<h1 id="hero-title">).*?(</h1>)',r'\1L’Architecture de l’Incarnation\2',source,flags=re.S)
-    navigation=''.join(link(path(k,'fr'),LABELS['fr'][k],'') for k in ['home','music','services','about','contact'])
+    navigation=''.join(link(path(k,'fr'),LABELS['fr'][k],'') for k in ['home','music','services','support','about','contact'])
     source=re.sub(r'(<nav class="desktop-nav"[^>]*>).*?(</nav>)',lambda m:m[1]+navigation+m[2],source,flags=re.S)
     source=re.sub(r'(<div class="mobile-menu"[^>]*>\s*<nav[^>]*>).*?(</nav>)',lambda m:m[1]+navigation+link(path('approach','en'),'EN','')+m[2],source,flags=re.S)
     source=source.replace('<div class="header-actions">',f'<div class="header-actions"><a class="language-switch" href="{path("approach","en")}" lang="en">EN</a>')

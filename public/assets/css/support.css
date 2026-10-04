@@ -13,6 +13,7 @@ a:focus-visible{outline:3px solid var(--purple);outline-offset:5px}
 .support-content{position:relative}
 .brand{text-align:center;text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:600;color:var(--purple);margin-bottom:18px}
 .support-portrait{display:block;width:136px;height:136px;margin:0 auto 22px;object-fit:cover;object-position:center 40%;border:5px solid #fff;border-radius:50%;box-shadow:0 8px 28px #190b401c;background:var(--lav)}
+.support-kicker{margin:0 0 14px;text-align:center;color:var(--purple);font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;line-height:1.6}
 h1{margin:0;text-align:center;color:var(--deep);font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(38px,8vw,50px);line-height:1.03;letter-spacing:-.02em;text-wrap:balance}
 .intro{max-width:430px;margin:22px auto 26px;text-align:center;color:#61566a;font-size:14px;line-height:1.75}
 .support-links{display:grid;gap:12px}

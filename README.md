@@ -16,7 +16,7 @@ Intuitive Career & Business Clarity links directly to its reservation page. Prof
 
 ## Music support
 
-The standalone support page is at `/support.html` in English and `/fr/soutenir.html` in French. `/soutenir.html` redirects to the English page. It keeps the supplied pastel card design, displays Morgane’s portrait in a circle, and links to the four supplied Stripe contributions: 10, 20, 50 and 100 EUR. The 20 EUR option is visually featured. The music pages and site footers link to the support page. Copy and payment URLs are maintained in `scripts/build_site.py`; styling is in `public/assets/css/support.css`. No payment is processed by the site itself.
+The standalone support page is at `/support.html` in English and `/fr/soutenir.html` in French. `/soutenir.html` redirects to the English page. It keeps the supplied pastel card design, displays Morgane’s portrait in a circle, and links to the four supplied Stripe contributions: 10, 20, 50 and 100 EUR. The 20 EUR option is visually featured. The main navigation (desktop and mobile), music pages and site footers link to the support page. Titles, descriptions and visible copy describe an online music fundraiser / cagnotte en ligne for Morgane’s creative projects. Copy and payment URLs are maintained in `scripts/build_site.py`; styling is in `public/assets/css/support.css`. No payment is processed by the site itself.
 
 ## Edit and verify
 

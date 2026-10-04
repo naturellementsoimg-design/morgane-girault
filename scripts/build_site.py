@@ -9,7 +9,7 @@ from xml.etree import ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / 'public'
 DOMAIN = 'https://morgane-girault.com'
-EMAIL = 'morgane.girault@naturellement-soi.com'
+EMAIL = 'feminine.escapes.awakens@gmail.com'
 WHATSAPP = 'https://wa.me/34631632482'
 PORTRAIT = 'https://res.cloudinary.com/diapyc6q1/image/upload/v1788231361/ChatGPT_Image_19_aou%CC%82t_2026_a%CC%80_12_35_06_axw29g.png'
 BANNER = 'https://res.cloudinary.com/diapyc6q1/image/upload/v1788231393/banner_artist_page_2_lcxbx6.png'

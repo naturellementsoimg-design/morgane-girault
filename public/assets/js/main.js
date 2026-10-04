@@ -21,7 +21,7 @@ if (inquiry) {
     const topic = service.options[service.selectedIndex].text;
     const french = document.documentElement.lang === 'fr';
     const body = `${french ? 'Prénom' : 'Name'}: ${data.get('name')}\nEmail: ${data.get('email')}\nService: ${topic}\n\n${data.get('message')}`;
-    const href = `mailto:morgane.girault@naturellement-soi.com?subject=${encodeURIComponent(topic + (french ? ' — Demande depuis le site' : ' — Website inquiry'))}&body=${encodeURIComponent(body)}`;
+    const href = `mailto:feminine.escapes.awakens@gmail.com?subject=${encodeURIComponent(topic + (french ? ' — Demande depuis le site' : ' — Website inquiry'))}&body=${encodeURIComponent(body)}`;
     window.location.href = href;
     document.getElementById('form-status').textContent = french
       ? 'Ton application e-mail s’ouvre avec un brouillon. Vérifie-le et envoie-le, ou utilise le lien WhatsApp si elle ne s’ouvre pas.'

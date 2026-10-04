@@ -12,7 +12,7 @@ Static bilingual website: English at `/`, French at `/fr/`, explicit language sw
 | Practical AI | 99 USD | One task, a working session and a reusable process |
 | Lyrics and melody commissions | Personal quote | Deliverables, language, revisions, timing and use agreed before payment |
 
-The service buttons lead to contact, with the service preselected. USD payment links and the new session questionnaire are not yet connected. No existing EUR checkout is presented as a USD checkout. The contact form opens an email draft; it does not claim to submit through a backend. WhatsApp is also available.
+Intuitive Career & Business Clarity links directly to its reservation page. Professional Bio & Offer Writing and Practical AI link to their respective Stripe payment pages, using the URLs supplied by Morgane in `SERVICE_CHECKOUTS`. Both English and French service pages use these links. Booking Flow Fix still begins with contact so compatibility and scope can be reviewed; music commissions remain by quotation. Contact is also available before booking or paying. The contact form opens an email draft for the visitor to review and send; WhatsApp is available as well.
 
 ## Edit and verify
 

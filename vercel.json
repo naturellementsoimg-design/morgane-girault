@@ -26,6 +26,16 @@
       "permanent": true
     },
     {
+      "source": "/soutenir.html",
+      "destination": "/support.html",
+      "permanent": true
+    },
+    {
+      "source": "/support",
+      "destination": "/support.html",
+      "permanent": true
+    },
+    {
       "source": "/music/",
       "destination": "/en/music.html",
       "permanent": true

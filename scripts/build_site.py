@@ -24,9 +24,16 @@ SERVICE_CHECKOUTS = {
     'ai': 'https://book.stripe.com/bJe8wI7DPgz82nsccr8k83P',
     'bio': 'https://book.stripe.com/eVq7sEgal1Eegeia4j8k83O',
 }
+SUPPORT_LINKS = [
+    (10, 'https://donate.stripe.com/00wcMY7DPgz89PUfoD8k83E'),
+    (20, 'https://donate.stripe.com/7sY5kw4rDaaK3rw7Wb8k83H'),
+    (50, 'https://donate.stripe.com/8x26oA9LXciS4vA7Wb8k83G'),
+    (100, 'https://donate.stripe.com/5kQeV63nzgz85zEfoD8k83F'),
+]
 ROUTES = {
     'home': {'en': '/', 'fr': '/fr/'},
     'music': {'en': '/en/music.html', 'fr': '/fr/musique.html'},
+    'support': {'en': '/support.html', 'fr': '/fr/soutenir.html'},
     'custom': {'en': '/en/custom-songwriting.html', 'fr': '/fr/creation-musicale-sur-mesure.html'},
     'services': {'en': '/en/services.html', 'fr': '/fr/services.html'},
     'clarity': {'en': '/en/intuitive-career-business-clarity.html', 'fr': '/fr/clarte-professionnelle-intuitive.html'},
@@ -66,6 +73,9 @@ LABELS = {
  'fr': {'music':'Musique','services':'Travailler ensemble','about':'À propos','contact':'Contact','home':'Accueil','skip':'Aller au contenu','menu':'Menu','explore':'Explorer','follow':'Écouter & suivre','terms':'CGV','privacy':'Confidentialité','legal':'Mentions légales','rights':'Tous droits réservés','based':'À Da Nang · À distance, à l’international','deliver':'Ce que tu reçois','fit':'Un périmètre clair','next':'Comment nous commençons','faq':'Quelques réponses utiles','related':'D’autres façons de travailler ensemble','request':'Parlons de ton projet','quote':'Demander un devis','approach':'L’intuition prend forme'}
 }
 
+LABELS['en']['support'] = 'Support my music'
+LABELS['fr']['support'] = 'Soutenir ma musique'
+
 def esc(value): return html.escape(str(value), quote=True)
 def clean_blank_lines(value): return re.sub(r'(?m)^[ \t]+$', '', value)
 def path(key,lang): return ROUTES[key][lang]
@@ -83,9 +93,9 @@ def header(key,lang):
 
 def footer(lang):
     l=LABELS[lang]; legal='/legal-notice.html' if lang=='en' else '/legal/mentions-legales.html'; privacy='/privacy-policy.html' if lang=='en' else '/legal/confidentialite-cookies.html'
-    return f'''<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand-block"><div class="footer-brand">Morgane<br>Girault</div><small>{l['based']}</small></div><div><h3>{l['explore']}</h3>{''.join(link(path(k,lang),l[k],'') for k in ['music','services','about','contact'])}</div><div><h3>{l['follow']}</h3>{link(SPOTIFY,'Spotify','',True)}{link(APPLE,'Apple Music','',True)}{link(YOUTUBE,'YouTube','',True)}{link(INSTAGRAM,'Instagram','',True)}</div></div><div class="footer-bottom"><span>© <span data-year>2026</span> Morgane Girault · {l['rights']}</span><div class="legal-links">{link(legal,l['legal'],'')}{link(privacy,l['privacy'],'')}{link('/legal/conditions-generales.html',l['terms'],'')}</div></div></div></footer>'''
+    return f'''<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand-block"><div class="footer-brand">Morgane<br>Girault</div><small>{l['based']}</small></div><div><h3>{l['explore']}</h3>{''.join(link(path(k,lang),l[k],'') for k in ['music','support','services','about','contact'])}</div><div><h3>{l['follow']}</h3>{link(SPOTIFY,'Spotify','',True)}{link(APPLE,'Apple Music','',True)}{link(YOUTUBE,'YouTube','',True)}{link(INSTAGRAM,'Instagram','',True)}</div></div><div class="footer-bottom"><span>© <span data-year>2026</span> Morgane Girault · {l['rights']}</span><div class="legal-links">{link(legal,l['legal'],'')}{link(privacy,l['privacy'],'')}{link('/legal/conditions-generales.html',l['terms'],'')}</div></div></div></footer>'''
 
-def metadata(key,lang,title,description,service=None):
+def metadata(key,lang,title,description,service=None,stylesheet='global.css',include_script=True):
     url=DOMAIN+path(key,lang)
     script_version=hashlib.sha256((PUBLIC/'assets/js/main.js').read_bytes()).hexdigest()[:12]
     graph=[{'@type':'Person','@id':DOMAIN+'/#morgane','name':'Morgane Girault','url':DOMAIN+'/', 'image':PORTRAIT,'jobTitle':'Artist, songwriter, medium and soul cartographer','sameAs':[SPOTIFY,APPLE,YOUTUBE,INSTAGRAM]}, {'@type':'WebPage','@id':url+'#page','url':url,'name':title,'description':description,'inLanguage':lang,'isPartOf':{'@id':DOMAIN+'/#website'},'about':{'@id':DOMAIN+'/#morgane'}}]
@@ -102,7 +112,8 @@ def metadata(key,lang,title,description,service=None):
         if service.get('price'): item['offers']={'@type':'Offer','price':str(service['price']),'priceCurrency':'USD','url':SERVICE_CHECKOUTS.get(key,url)}
         graph.append(item)
     alternates=''.join(f'<link rel="alternate" hreflang="{code}" href="{DOMAIN+path(key,code)}">' for code in ['en','fr'])
-    return f'''<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Morgane Girault</title><meta name="description" content="{esc(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="Morgane Girault"><link rel="canonical" href="{url}">{alternates}<link rel="alternate" hreflang="x-default" href="{DOMAIN+path(key,'en')}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} | Morgane Girault"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{PORTRAIT}"><meta property="og:image:alt" content="Morgane Girault"><meta property="og:site_name" content="Morgane Girault"><meta property="og:locale" content="{'en_US' if lang=='en' else 'fr_FR'}"><meta property="og:locale:alternate" content="{'fr_FR' if lang=='en' else 'en_US'}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{PORTRAIT}"><meta name="theme-color" content="#110d0e"><link rel="icon" href="{PORTRAIT}"><link rel="preconnect" href="https://res.cloudinary.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/css/global.css"><script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</','<\\/')}</script><script src="/assets/js/main.js?v={script_version}" defer></script>'''
+    script=f'<script src="/assets/js/main.js?v={script_version}" defer></script>' if include_script else ''
+    return f'''<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Morgane Girault</title><meta name="description" content="{esc(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="Morgane Girault"><link rel="canonical" href="{url}">{alternates}<link rel="alternate" hreflang="x-default" href="{DOMAIN+path(key,'en')}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} | Morgane Girault"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{PORTRAIT}"><meta property="og:image:alt" content="Morgane Girault"><meta property="og:site_name" content="Morgane Girault"><meta property="og:locale" content="{'en_US' if lang=='en' else 'fr_FR'}"><meta property="og:locale:alternate" content="{'fr_FR' if lang=='en' else 'en_US'}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{PORTRAIT}"><meta name="theme-color" content="#110d0e"><link rel="icon" href="{PORTRAIT}"><link rel="preconnect" href="https://res.cloudinary.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/css/{stylesheet}"><script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</','<\\/')}</script>{script}'''
 
 def write_page(key,lang,title,description,body,service=None):
     urlpath=path(key,lang)
@@ -110,6 +121,53 @@ def write_page(key,lang,title,description,body,service=None):
     f=PUBLIC/rel; f.parent.mkdir(parents=True,exist_ok=True)
     page=f'<!doctype html>\n<html lang="{lang}"><head>{metadata(key,lang,title,description,service)}</head><body class="{key}">{header(key,lang)}<main id="main">{body}</main>{footer(lang)}</body></html>\n'
     f.write_text(page.replace('><','>\n<'))
+
+def support(lang):
+    en=lang=='en'
+    copy = {
+        'en': {
+            'title':'Support My Music & Creative Projects',
+            'description':'Support Morgane Girault’s music and creative projects. Contribute €10, €20, €50 or €100 through Stripe to help new songs and melodies take shape.',
+            'heading':'Support my music<br>& creative projects.',
+            'intro':'If a song, a melody or a few words of mine have stayed with you, you can help me keep creating. Choose the contribution that feels right for you.',
+            'labels':['A little encouragement','Support my next creation','A generous contribution','A beautiful boost'],
+            'note':'Every contribution supports the time and space to write songs, compose melodies and bring my creative projects to life. Thank you for being part of the music.',
+            'secure':'Secure payment via Stripe · EUR',
+            'listen':'Listen to my music',
+            'languages':'Page language',
+        },
+        'fr': {
+            'title':'Soutenir ma musique et mes projets',
+            'description':'Soutiens la musique et les projets créatifs de Morgane Girault. Contribue à hauteur de 10, 20, 50 ou 100 € via Stripe pour aider de nouvelles créations à voir le jour.',
+            'heading':'Soutiens ma musique<br>et mes projets.',
+            'intro':'Si une chanson, une mélodie ou quelques mots de moi t’ont accompagnée, tu peux m’aider à continuer de créer. Choisis la contribution qui te correspond.',
+            'labels':['Un petit encouragement','Soutenir ma prochaine création','Un soutien précieux','Un bel élan pour mes projets'],
+            'note':'Chaque contribution soutient le temps et l’espace nécessaires pour écrire des chansons, composer des mélodies et donner vie à mes projets créatifs. Merci de faire partie de cette aventure musicale.',
+            'secure':'Paiement sécurisé via Stripe · EUR',
+            'listen':'Écouter ma musique',
+            'languages':'Langue de la page',
+        },
+    }[lang]
+    switch=''.join(f'<a href="{path("support",code)}" lang="{code}" hreflang="{code}"'+(' class="active" aria-current="page"' if code==lang else '')+f' aria-label="{"Read this page in English" if code=="en" else "Lire cette page en français"}">{code.upper()}</a>' for code in ['en','fr'])
+    contributions=''.join(f'<a class="support-option'+(' featured' if amount==20 else '')+f'" href="{url}" target="_blank" rel="noopener noreferrer"><span><span class="amount">{amount} €</span><span class="label">{esc(label)}</span></span><span class="arrow" aria-hidden="true">→</span></a>' for (amount,url),label in zip(SUPPORT_LINKS,copy['labels']))
+    head=metadata('support',lang,copy['title'],copy['description'],stylesheet='support.css',include_script=False)
+    head+='<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">'
+    body=f'''<main class="support-page">
+<nav class="language-nav" aria-label="{copy['languages']}"><div class="language-switch">{switch}</div></nav>
+<section class="support-card" aria-labelledby="support-heading"><div class="support-content">
+<div class="brand">Morgane Girault</div>
+<img class="support-portrait" src="{PORTRAIT}" alt="Morgane Girault" width="136" height="136" fetchpriority="high">
+<h1 id="support-heading">{copy['heading']}</h1>
+<p class="intro">{esc(copy['intro'])}</p>
+<div class="support-links">{contributions}</div>
+<p class="note">{esc(copy['note'])}</p>
+<p class="secure"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><path d="M3 6V4a3 3 0 0 1 6 0v2M2 6h8v7H2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>{esc(copy['secure'])}</p>
+</div></section>
+<footer class="support-footer"><a href="{path('home',lang)}">morgane-girault.com</a><a href="{path('music',lang)}">{copy['listen']}</a></footer>
+</main>'''
+    f=PUBLIC/path('support',lang).lstrip('/')
+    f.parent.mkdir(parents=True,exist_ok=True)
+    f.write_text(f'<!doctype html>\n<html lang="{lang}"><head>{head}</head><body>{body}</body></html>\n'.replace('><','>\n<'))
 
 def hero(lang,title,intro,kicker,parent=None,facts=None):
     l=LABELS[lang]; crumbs=link(path('home',lang),l['home'],'')
@@ -147,6 +205,7 @@ def music(lang):
     records=[('Warm and Deep','Album','https://res.cloudinary.com/diapyc6q1/image/upload/v1788231980/Portrait_d_album_warm_and_deep_Morgane_Girault_du93g8.png','https://open.spotify.com/album/4h5PNmZXZ6yEeT6mp1CBAB'),('Goddess Within','Single','https://res.cloudinary.com/diapyc6q1/image/upload/v1788232414/Goddess_within_album_morgane_girault_cover_nr3gvi.png',SPOTIFY),('The Color of Your Soul','Music' if en else 'Musique','https://res.cloudinary.com/diapyc6q1/image/upload/v1788233250/Cover_album_The_color_of_your_soul_Morgane_Girault_s0wjyb.png','https://open.spotify.com/album/1tJrqQ5KWXAEjjsTvyt3bG')]
     body+='<section class="section"><div class="container"><span class="eyebrow">'+('The catalogue' if en else 'Le catalogue')+'</span><h2 class="section-title">'+('Listen inside my universe.' if en else 'Entrer dans mon univers.')+'</h2><div class="record-grid">'+''.join(f'<article class="record"><a href="{u}" target="_blank" rel="noopener noreferrer"><div class="record-cover"><img src="{c}" alt="{esc(n)} — Morgane Girault" width="1024" height="1024" loading="lazy"></div><small>{t}</small><h3>{esc(n)}</h3><p>'+('Explore on Spotify' if en else 'Découvrir sur Spotify')+'</p></a></article>' for n,t,c,u in records)+'</div></div></section>'
     body+='<section class="section wine"><div class="container split"><div><span class="eyebrow">'+('Create with me' if en else 'Créer ensemble')+'</span><h2 class="section-title">'+('Your story can become a song.' if en else 'Ton histoire peut devenir une chanson.')+'</h2></div><div><p class="lead">'+('I write lyrics and compose melodies for people, artists and creative projects. We can begin with your story, an existing text, a feeling you want to express or a musical direction.' if en else 'J’écris des paroles et compose des mélodies pour des personnes, des artistes et des projets créatifs. Nous pouvons partir de ton histoire, d’un texte existant, d’une émotion ou d’une direction musicale.')+'</p><p>'+('A paid, personalised commission. The format, price, delivery date and intended use are agreed before we begin.' if en else 'Une création personnalisée payante. Le format, le tarif, le délai et l’usage prévu sont définis avant de commencer.')+f'</p>{link(path("custom",lang),"Explore a custom commission" if en else "Découvrir la création sur mesure","btn btn-light")}</div></div></section>'
+    body+='<section class="section"><div class="container prose"><span class="eyebrow">'+('Keep the music growing' if en else 'Faire grandir la musique')+'</span><h2 class="section-title">'+('Support my music & creative projects.' if en else 'Soutenir ma musique et mes projets.')+'</h2><p class="lead">'+('If my music has been part of your story, you can help me keep writing songs, composing melodies and bringing new creations to life.' if en else 'Si ma musique a accompagné un moment de ton histoire, tu peux m’aider à continuer d’écrire, de composer et de donner vie à de nouvelles créations.')+f'</p>{link(path("support",lang),LABELS[lang]["support"],"btn btn-wine")}</div></section>'
     write_page('music',lang,title,desc,body)
 
 def custom(lang):
@@ -261,6 +320,7 @@ def configuration():
     redirects=[]
     aliases={
       '/en/index.html':'/', '/en/':'/', '/home.html':'/', '/home':'/',
+      '/soutenir.html':path('support','en'), '/support':path('support','en'),
       '/music/':path('music','en'), '/music':path('music','en'), '/music/warm-and-deep/':path('music','en'),
       '/services/':path('services','en'), '/services':path('services','en'), '/about/':path('about','en'), '/about':path('about','en'), '/about.html':path('about','en'),
       '/contact/':path('contact','en'), '/contact':path('contact','en'), '/contact.html':path('contact','en'), '/contact-en.html':path('contact','en'),
@@ -302,9 +362,9 @@ def configuration():
 
 def build():
     for lang in ['en','fr']:
-        home(lang); music(lang); custom(lang); services_page(lang); about(lang); approach(lang); contact(lang)
+        home(lang); music(lang); support(lang); custom(lang); services_page(lang); about(lang); approach(lang); contact(lang)
         for key in SERVICES: service_page(key,lang)
     preserve_architecture(); adapt_legal(); configuration()
-    print('Built 22 bilingual public pages, SEO metadata, sitemap and Vercel configuration.')
+    print(f'Built {sum(len(routes) for routes in ROUTES.values())} bilingual public pages, SEO metadata, sitemap and Vercel configuration.')
 
 if __name__=='__main__': build()

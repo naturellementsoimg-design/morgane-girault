@@ -1,6 +1,7 @@
 """Build the bilingual public pages. No build dependencies or client framework."""
 from pathlib import Path
 import html
+import hashlib
 import json
 import re
 from urllib.parse import quote
@@ -80,6 +81,7 @@ def footer(lang):
 
 def metadata(key,lang,title,description,service=None):
     url=DOMAIN+path(key,lang)
+    script_version=hashlib.sha256((PUBLIC/'assets/js/main.js').read_bytes()).hexdigest()[:12]
     graph=[{'@type':'Person','@id':DOMAIN+'/#morgane','name':'Morgane Girault','url':DOMAIN+'/', 'image':PORTRAIT,'jobTitle':'Artist, songwriter, medium and soul cartographer','sameAs':[SPOTIFY,APPLE,YOUTUBE,INSTAGRAM]}, {'@type':'WebPage','@id':url+'#page','url':url,'name':title,'description':description,'inLanguage':lang,'isPartOf':{'@id':DOMAIN+'/#website'},'about':{'@id':DOMAIN+'/#morgane'}}]
     if key=='home': graph.append({'@type':'WebSite','@id':DOMAIN+'/#website','name':'Morgane Girault','url':DOMAIN+'/','inLanguage':['en','fr'],'publisher':{'@id':DOMAIN+'/#morgane'}})
     else:
@@ -94,7 +96,7 @@ def metadata(key,lang,title,description,service=None):
         if service.get('price'): item['offers']={'@type':'Offer','price':str(service['price']),'priceCurrency':'USD','url':url}
         graph.append(item)
     alternates=''.join(f'<link rel="alternate" hreflang="{code}" href="{DOMAIN+path(key,code)}">' for code in ['en','fr'])
-    return f'''<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Morgane Girault</title><meta name="description" content="{esc(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="Morgane Girault"><link rel="canonical" href="{url}">{alternates}<link rel="alternate" hreflang="x-default" href="{DOMAIN+path(key,'en')}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} | Morgane Girault"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{PORTRAIT}"><meta property="og:image:alt" content="Morgane Girault"><meta property="og:site_name" content="Morgane Girault"><meta property="og:locale" content="{'en_US' if lang=='en' else 'fr_FR'}"><meta property="og:locale:alternate" content="{'fr_FR' if lang=='en' else 'en_US'}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{PORTRAIT}"><meta name="theme-color" content="#110d0e"><link rel="icon" href="{PORTRAIT}"><link rel="preconnect" href="https://res.cloudinary.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/css/global.css"><script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</','<\\/')}</script><script src="/assets/js/main.js" defer></script>'''
+    return f'''<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Morgane Girault</title><meta name="description" content="{esc(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="Morgane Girault"><link rel="canonical" href="{url}">{alternates}<link rel="alternate" hreflang="x-default" href="{DOMAIN+path(key,'en')}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} | Morgane Girault"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{PORTRAIT}"><meta property="og:image:alt" content="Morgane Girault"><meta property="og:site_name" content="Morgane Girault"><meta property="og:locale" content="{'en_US' if lang=='en' else 'fr_FR'}"><meta property="og:locale:alternate" content="{'fr_FR' if lang=='en' else 'en_US'}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{PORTRAIT}"><meta name="theme-color" content="#110d0e"><link rel="icon" href="{PORTRAIT}"><link rel="preconnect" href="https://res.cloudinary.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/assets/css/global.css"><script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@graph':graph},ensure_ascii=False).replace('</','<\\/')}</script><script src="/assets/js/main.js?v={script_version}" defer></script>'''
 
 def write_page(key,lang,title,description,body,service=None):
     urlpath=path(key,lang)

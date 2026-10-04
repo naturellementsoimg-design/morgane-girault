@@ -7,7 +7,7 @@ Static bilingual website: English at `/`, French at `/fr/`, explicit language sw
 | Service | Price | Delivery scope |
 |---|---:|---|
 | Intuitive Career & Business Clarity | 79 USD | Short questionnaire, 45-minute session, one-page synthesis, one next step |
-| Professional Bio & Offer Writing | 119 USD | One bio and one existing offer; agreed correction round |
+| Professional Bio & Offer Writing | 111 USD | One bio and one existing offer; agreed correction round |
 | Booking Flow Fix | 149 USD | One defined issue; compatibility and scope checked before payment |
 | Practical AI | 99 USD | One task, a working session and a reusable process |
 | Lyrics and melody commissions | Personal quote | Deliverables, language, revisions, timing and use agreed before payment |

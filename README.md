@@ -18,6 +18,10 @@ Intuitive Career & Business Clarity links directly to its reservation page. Prof
 
 The standalone support page is at `/support.html` in English and `/fr/soutenir.html` in French. `/soutenir.html` redirects to the English page. It keeps the supplied pastel card design, displays Morgane’s portrait in a circle, and links to the four supplied Stripe contributions: 10, 20, 50 and 100 EUR. The 20 EUR option is visually featured. The main navigation (desktop and mobile), music pages and site footers link to the support page. Titles, descriptions and visible copy describe an online music fundraiser / cagnotte en ligne for Morgane’s creative projects. Copy and payment URLs are maintained in `scripts/build_site.py`; styling is in `public/assets/css/support.css`. No payment is processed by the site itself.
 
+## Analytics
+
+All non-empty published HTML pages use Google Analytics 4 measurement ID `G-049S97BX69`, installed by the final build pass. The shared loader in `public/assets/js/analytics.js` loads Google's tag only after an explicit analytics opt-in, remembers acceptance/refusal for 180 days, and lets visitors reopen their choice through Cookie settings or the privacy page. Refusal blocks the tag; withdrawing a previous acceptance disables measurement, removes GA cookies and reloads the page. Advertising consent stays denied, Google Signals and ad personalisation are disabled, and the code does not send form contents or URL query strings. English and French privacy pages describe the actual implementation. Old inline Google tags are removed to avoid duplicate or premature page views.
+
 ## Edit and verify
 
 Edit `scripts/build_site.py` for copy, routes and service definitions. Edit `public/assets/css/global.css` for styling and `public/assets/js/main.js` for navigation and the contact draft. The original French architecture essay and legal documents are preserved in `scripts/legacy/`; the full architecture essay remains published at its French approach URL.
@@ -26,6 +30,8 @@ Edit `scripts/build_site.py` for copy, routes and service definitions. Edit `pub
 python3 scripts/build_site.py
 python3 scripts/check_site.py
 node --check public/assets/js/main.js
+node --check public/assets/js/analytics.js
+node tests/analytics.test.cjs
 python3 -m http.server 8765 --directory public
 ```
 

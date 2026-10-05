@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / 'public'
 DOMAIN = 'https://morgane-girault.com'
 EMAIL = 'feminine.escapes.awakens@gmail.com'
+GA_MEASUREMENT_ID = 'G-049S97BX69'
 WHATSAPP = 'https://wa.me/34631632482'
 PORTRAIT = 'https://res.cloudinary.com/diapyc6q1/image/upload/v1788231361/ChatGPT_Image_19_aou%CC%82t_2026_a%CC%80_12_35_06_axw29g.png'
 BANNER = 'https://res.cloudinary.com/diapyc6q1/image/upload/v1788231393/banner_artist_page_2_lcxbx6.png'
@@ -371,11 +372,29 @@ def configuration():
     notfound='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found | Morgane Girault</title><link rel="stylesheet" href="/assets/css/global.css"></head><body><main class="section container"><span class="eyebrow">404</span><h1 class="section-title">Let’s find a new starting point.</h1><p>This page is not available.</p><div class="button-row"><a class="btn btn-wine" href="/">Home · EN</a><a class="btn btn-outline" href="/fr/">Accueil · FR</a></div></main></body></html>'
     (PUBLIC/'404.html').write_text(notfound+'\n')
 
+def install_analytics():
+    """Use one consent-aware GA4 loader on every non-empty published HTML page."""
+    js_version=hashlib.sha256((PUBLIC/'assets/js/analytics.js').read_bytes()).hexdigest()[:12]
+    css_version=hashlib.sha256((PUBLIC/'assets/css/analytics-consent.css').read_bytes()).hexdigest()[:12]
+    tags=f'<link rel="stylesheet" href="/assets/css/analytics-consent.css?v={css_version}">\n<script src="/assets/js/analytics.js?v={js_version}" data-measurement-id="{GA_MEASUREMENT_ID}" defer></script>\n'
+    def keep_script(match):
+        text=match.group(0)
+        if 'googletagmanager.com/gtag/js' in text or re.search(r'\bgtag\s*\(',text) or '/assets/js/analytics.js' in text:
+            return ''
+        return text
+    for f in PUBLIC.rglob('*.html'):
+        text=f.read_text()
+        if not text.strip() or '</head>' not in text: continue
+        text=re.sub(r'<script\b[^>]*>.*?</script>[ \t]*(?:\r?\n)?',keep_script,text,flags=re.I|re.S)
+        text=re.sub(r'<link\b[^>]*href=["\'][^"\']*/assets/css/analytics-consent\.css[^"\']*["\'][^>]*>[ \t]*(?:\r?\n)?','',text,flags=re.I)
+        text=text.replace('</head>',tags+'</head>',1)
+        f.write_text(text)
+
 def build():
     for lang in ['en','fr']:
         home(lang); music(lang); support(lang); custom(lang); services_page(lang); about(lang); approach(lang); contact(lang)
         for key in SERVICES: service_page(key,lang)
-    preserve_architecture(); adapt_legal(); configuration()
+    preserve_architecture(); adapt_legal(); configuration(); install_analytics()
     print(f'Built {sum(len(routes) for routes in ROUTES.values())} bilingual public pages, SEO metadata, sitemap and Vercel configuration.')
 
 if __name__=='__main__': build()

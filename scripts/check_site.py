@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlparse
 import json
 from xml.etree import ElementTree as ET
-from build_site import ROUTES, DOMAIN, SERVICES
+from build_site import ROUTES, DOMAIN, SERVICES, GA_MEASUREMENT_ID
 
 PUBLIC=Path(__file__).resolve().parents[1]/'public'
 class Page(HTMLParser):
@@ -67,4 +67,13 @@ assert set(locs)=={DOMAIN+u for pair in ROUTES.values() for u in pair.values()}
 assert DOMAIN+'/sitemap.xml' in (PUBLIC/'robots.txt').read_text()
 for f in (PUBLIC/'post-achats').glob('*.html'):
     if f.read_text().strip():assert 'content="noindex,nofollow"' in f.read_text(),f
+analytics_pages=0
+for f in PUBLIC.rglob('*.html'):
+    text=f.read_text()
+    if not text.strip(): continue
+    assert text.count('data-measurement-id="'+GA_MEASUREMENT_ID+'"')==1,(f,'one GA4 loader required')
+    assert '/assets/js/analytics.js?v=' in text and '/assets/css/analytics-consent.css?v=' in text,(f,'analytics assets missing')
+    assert 'googletagmanager.com/gtag/js' not in text,(f,'unconditional Google tag')
+    analytics_pages+=1
+print(f'PASS: one consent-aware GA4 loader on {analytics_pages} non-empty HTML pages.')
 print(f'PASS: {len(pages)} pages; local links and anchors; reciprocal EN/FR; prices; structured data; {len(redirects)} redirects; sitemap; post-purchase noindex.')

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://morgane-girault.com/sitemap.xml
+Sitemap: https://www.morgane-girault.com/sitemap.xml

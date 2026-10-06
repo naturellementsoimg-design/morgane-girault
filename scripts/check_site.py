@@ -50,12 +50,14 @@ for key,pair in ROUTES.items():
         for href in p.links:
             assert href and href!='link' and not href.startswith('javascript:'),(url,'placeholder',href)
             if href.startswith(('https:','http:','mailto:','tel:')):continue
-            target,fragment=resolve(href if href.startswith('/') else str(Path(url).parent/ href))
+            target,fragment=resolve(url+href if href.startswith('#') else href if href.startswith('/') else str(Path(url).parent/ href))
             assert target.exists() and target.read_text().strip(),(url,'broken link',href)
             if fragment:assert fragment in Page(target.read_text()).ids,(url,'missing anchor',href)
         if key in SERVICES:
             offers=[n['offers'] for s in p.scripts for n in s.get('@graph',[]) if n.get('@type')=='Service']
             assert len(offers)==1 and offers[0]['price']==str(SERVICES[key]['price']) and offers[0]['priceCurrency']=='USD',(url,'incorrect price')
+        if lang=='en':
+            assert not any(x in f.read_text() for x in ['schedule.naturellement-soi.com/intuitive-career-and-business-clarity','bJe8wI7DPgz82nsccr8k83P','45-minute session','practical AI session','focused clarity session']),(url,'retired live-session offer')
         assert not any(w in f.read_text().lower() for w in ['live & booking','event name','00.00','action="link"']),(url,'old stage or placeholder content')
 
 for source,dest in redirects.items():

@@ -131,8 +131,48 @@
       "permanent": true
     },
     {
+      "source": "/soulmap",
+      "destination": "/en/soulmap.html",
+      "permanent": true
+    },
+    {
+      "source": "/soulmap.html",
+      "destination": "/en/soulmap.html",
+      "permanent": true
+    },
+    {
+      "source": "/soulmap-pro",
+      "destination": "/en/soulmap-pro.html",
+      "permanent": true
+    },
+    {
+      "source": "/soulmap-pro.html",
+      "destination": "/en/soulmap-pro.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/intuitive-career-business-clarity.html",
+      "destination": "/en/soulmap-pro.html",
+      "permanent": true
+    },
+    {
+      "source": "/fr/clarte-professionnelle-intuitive.html",
+      "destination": "/fr/soulmap-pro.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/practical-ai-session.html",
+      "destination": "/en/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/fr/ia-pratique-activite.html",
+      "destination": "/fr/services.html",
+      "permanent": true
+    },
+    {
       "source": "/identity-clarity-audit.html",
-      "destination": "/en/intuitive-career-business-clarity.html",
+      "destination": "/en/soulmap-pro.html",
       "permanent": true
     },
     {

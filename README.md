@@ -1,36 +1,48 @@
 # Morgane Girault
 
-Static bilingual website: English at `/`, French at `/fr/`, explicit language switches on corresponding pages. Published files are in `public/`; Vercel is configured to serve that directory.
+Static bilingual website: English at `/`, explicit French switch to `/fr/` and corresponding pages. Vercel serves `public/`. This repository is `naturellementsoimg-design/morgane-girault`; Naturellement Soi is a separate repository and remains unchanged.
 
-## Homepage and offer presentation
+## Current positioning
 
-The homepage leads with the visitor's career or business problem, identifies creatives, practitioners and independent professionals as the audience, and links directly to the four services. The offer cards show the starting problem, concrete output and price together. Morgane's mediumship and energetic reading are explicit in the career clarity offer; music, listening and paid songwriting commissions follow the services and introduction. Work with me comes before Music in the shared navigation and footer, including the preserved French essay and legal navigation. English and French service pages use the same problem-led structure, descriptive titles and service-specific links. Stylesheets are versioned by their content hash.
+The English market is served through personalised written work, with no live calls or appointments. The homepage leads with SoulMap and the reader’s life transition: feeling disconnected from herself, repeating patterns or outgrowing an old role. SoulMap Pro follows for women with a business or defined professional project. Both book covers supplied by Morgane appear on the homepage, their respective offer pages, social metadata and Stripe checkouts. Practical writing and website services come afterwards; music and paid songwriting remain visible further down the homepage, in navigation and footers.
 
-The October 2026 wording review uses English / United States as a comparison for international clients. Ubersuggest autocomplete returned terms including `professional bio writing services`, `AI for small business owners`, `how to use AI for small business` and `AI workflows for small business`; its daily report quota prevented fresh volume and difficulty metrics. These phrases inform wording, without claims about volume or rankings. Market context: [The Muse's career-rut service](https://www.themuse.com/coaching/stuck-in-a-career-rut), [SCORE's May 2026 practical AI session](https://www.score.org/business-education/ai-small-business-find-opportunities-and-take-action/) and [LinkedIn / Ipsos 2026 early small business findings](https://business.linkedin.com/small-business/resources/2026-small-business-study). Descriptive page titles follow [Google Search Central guidance](https://developers.google.com/search/docs/appearance/title-link).
+The two SoulMap readings are adapted from the current personal and professional pages in Naturellement Soi, rather than merged into a single promise. Mediumship and energetic reading are explicit. The copy uses plain English phrases such as “personalised written soul reading”, “life transition”, “professional identity” and “recurring business patterns”. No keyword volumes or ranking claims are invented. First-party market wording was checked against [StarLore’s explanation of written PDF readings](https://www.starlorereadings.com/blog/how-written-pdf-readings-work/). Existing Ubersuggest quota limits prevented fresh volume or difficulty metrics.
 
-## Current services
+## Offers and payment
 
-| Service | Price | Delivery scope |
+| Offer | One-time price | Delivery |
 |---|---:|---|
-| Intuitive Career & Business Clarity | 79 USD | Short questionnaire, 45-minute session, one-page synthesis, one next step |
-| Professional Bio & Offer Writing | 111 USD | One bio and one existing offer; agreed correction round |
-| Booking Flow Fix | 149 USD | One defined issue; compatibility and scope checked before payment |
-| Practical AI | 99 USD | One task, a working session and a reusable process |
-| Lyrics and melody commissions | Personal quote | Deliverables, language, revisions, timing and use agreed before payment |
+| SoulMap personal | 77 USD | Personal English PDF; within 7 business days after complete questionnaire and verified payment |
+| SoulMap Pro — Out of the Fog | 144 USD | Professional English PDF; within 7–10 business days after complete questionnaire and verified payment |
+| Professional Bio & Offer Writing | 111 USD | One bio and one existing offer; written brief and agreed correction round |
+| Booking Flow Fix | 149 USD | One defined issue; scope and compatibility reviewed by email before payment |
+| Custom lyrics / melody | Written quotation | Format, revisions, timing and usage rights agreed in writing |
 
-Intuitive Career & Business Clarity links directly to its reservation page. Professional Bio & Offer Writing and Practical AI link to their respective Stripe payment pages, using the URLs supplied by Morgane in `SERVICE_CHECKOUTS`. Both English and French service pages use these links. Booking Flow Fix still begins with contact so compatibility and scope can be reviewed; music commissions remain by quotation. Contact is also available before booking or paying. The contact form opens an email draft for the visitor to review and send; WhatsApp is available as well.
+New live Stripe products and Payment Links were created specifically for these English books, in USD. Existing Naturellement Soi EUR products and older session links were left intact.
 
-## Music support
+- Personal: `https://buy.stripe.com/00w00c7DP5Uu9PUa4j8k83Q` (`prod_VOGOmrLfihGeF6`, `price_1UNTrZ2N8OzSgRf7Jubgwitc`, `plink_1UNTrj2N8OzSgRf719Ov5bhW`).
+- Pro: `https://buy.stripe.com/4gMeV64rDfv43rw4JZ8k83R` (`prod_VOGm2XDajTN3MS`, `price_1UNUET2N8OzSgRf7HItH2AGN`, `plink_1UNUEk2N8OzSgRf7QFXkFiXN`).
+- Bio retains Morgane’s supplied Stripe link. Booking fixes and music commissions begin with a written inquiry.
 
-The standalone support page is at `/support.html` in English and `/fr/soutenir.html` in French. `/soutenir.html` redirects to the English page. It keeps the supplied pastel card design, displays Morgane’s portrait in a circle, and links to the four supplied Stripe contributions: 10, 20, 50 and 100 EUR. The 20 EUR option is visually featured. The main navigation (desktop and mobile), music pages and site footers link to the support page. Titles, descriptions and visible copy describe an online music fundraiser / cagnotte en ligne for Morgane’s creative projects. Copy and payment URLs are maintained in `scripts/build_site.py`; styling is in `public/assets/css/support.css`. No payment is processed by the site itself.
+The French pages translate the presentation of this USD catalog; both SoulMap books in this catalog are written in English. The former career clarity and practical AI session pages redirect permanently to the relevant written catalog and are excluded from the sitemap.
 
-## Analytics
+## SoulMap fulfillment
 
-All non-empty published HTML pages use Google Analytics 4 measurement ID `G-049S97BX69`, installed by the final build pass. The shared loader in `public/assets/js/analytics.js` loads Google's tag only after an explicit analytics opt-in, remembers acceptance/refusal for 180 days, and lets visitors reopen their choice through Cookie settings or the privacy page. Refusal blocks the tag; withdrawing a previous acceptance disables measurement, removes GA cookies and reloads the page. Advertising consent stays denied, Google Signals and ad personalisation are disabled, and the code does not send form contents or URL query strings. English and French privacy pages describe the actual implementation. Old inline Google tags are removed to avoid duplicate or premature page views.
+Stripe redirects purchasers to `/post-achats/soulmap.html` or `/post-achats/soulmap-pro.html`. French questionnaire presentations are available at the corresponding `-fr.html` URL. These pages are noindex and excluded from the sitemap.
+
+The questionnaire gathers all first names, surname, checkout email, birth date, time if known, city and country, current context and main question. Pro also requests the activity, offers and client context. An unknown birth time can be indicated explicitly. The form prepares a reviewable email draft with a copy fallback: **the visitor must send the email**. It does not upload, store or automatically email the answers. The recipient is `feminine.escapes.awakens@gmail.com`. General inquiries also prepare email drafts; WhatsApp remains available.
+
+Fulfillment is manual. Morgane must match the email with the order, verify successful payment in Stripe, request missing information if needed, then prepare and email the PDF. A static success-page visit is not evidence of payment. There is no instant download, automated fulfillment or purchase-conversion event claimed by the site. Questionnaire data is not sent to analytics.
+
+## Music support and analytics
+
+The music support pages remain `/support.html` and `/fr/soutenir.html`, with Morgane’s circular portrait and the supplied Stripe contributions of 10, 20, 50 and 100 EUR. Support is linked from the main navigation, music pages and footers.
+
+Every non-empty HTML page uses consent-gated GA4 `G-049S97BX69`. Google’s tag loads only after opt-in. Refusal, expiry and withdrawal are handled by the shared loader; ad consent stays denied. Form contents and URL queries are not sent to analytics. Privacy pages explain the draft-only SoulMap questionnaires.
 
 ## Edit and verify
 
-Edit `scripts/build_site.py` for copy, routes and service definitions. Edit `public/assets/css/global.css` for styling and `public/assets/js/main.js` for navigation and the contact draft. The original French architecture essay and legal documents are preserved in `scripts/legacy/`; the full architecture essay remains published at its French approach URL.
+Copy, routes and page generation live in `scripts/build_site.py`. Shared styling and draft preparation are in `public/assets/css/global.css` and `public/assets/js/main.js`. Original French architecture and legal sources are maintained in `scripts/legacy/`.
 
 ```sh
 python3 scripts/build_site.py
@@ -38,13 +50,7 @@ python3 scripts/check_site.py
 node --check public/assets/js/main.js
 node --check public/assets/js/analytics.js
 node tests/analytics.test.cjs
-python3 -m http.server 8765 --directory public
+node tests/soulmap-draft.test.cjs
 ```
 
-SEO includes self-canonical pages, reciprocal `en`/`fr`/`x-default` alternatives, descriptive metadata, Person/WebPage/Service/Breadcrumb structured data, an XML sitemap, useful internal links, redirects for older routes and noindex on existing post-purchase pages. Sitemap entries contain only the 24 public bilingual pages. Existing legal text has been preserved; English and French legal documents retain their own wording.
-
-## Operational limits from the initial offer brief
-
-These are internal planning limits, not additional customer-facing promises: clarity 1h15 total; bio/offer 1h30; booking fix 2h; practical AI 1h30. Confirm scope and delivery dates before payment for each digital intervention. Commission pricing and usage rights are determined in the written quotation.
-
-Preliminary Ubersuggest research used English / United States as an international comparison: `career clarity`, `professional bio writing service` and `custom songwriting`. No search-volume or ranking promises are made to customers. Da Nang is a starting distribution channel; the services remain available internationally.
+SEO includes 24 canonical bilingual public pages, reciprocal EN/FR/x-default links, descriptive metadata, Person/WebPage/Service/Breadcrumb structured data with exact USD prices, relevant book imagery, an XML sitemap and redirects for old routes. Post-purchase questionnaires remain noindex.

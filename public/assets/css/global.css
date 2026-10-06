@@ -5,7 +5,7 @@
 @media(max-width:760px){.mobile-menu-btn{display:block}.nav-links{display:none;position:absolute;top:76px;inset-inline:0;background:var(--black);padding:20px 5%;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid #ffffff30}.nav-links.is-open{display:flex}.nav-links a{display:block;padding:14px 0}.entry-grid,.offer-grid,.record-grid,.steps{grid-template-columns:1fr}.entry,.offer-card{padding:32px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand-block{grid-column:1/-1}.hero{min-height:750px;min-height:100svh}.hero h1{font-size:clamp(3.1rem,10.8vw,5rem)}.hero-content{padding-top:160px;padding-bottom:48px}.hero-image{object-position:62% center}.hero-overlay{background:linear-gradient(0deg,#110d0efa,#110d0e22 95%),linear-gradient(90deg,#110d0e80,transparent)}.hero-line{font-size:1rem}.hero .btn{flex:1}.page-hero{padding:65px 0 55px}.page-hero h1{font-size:clamp(2.7rem,10vw,4.5rem)}.section-title{font-size:clamp(2.4rem,8vw,3.8rem)}.inquiry-form{padding:25px}.breadcrumbs{font-size:.65rem}.btn{padding-inline:20px}.manifesto{padding:65px 0}.steps li{padding-bottom:0}.quote{font-size:2.3rem}.footer-grid{gap:28px}.footer-brand{font-size:2.9rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 
-/* Service-first home: readable offer copy, then the person and the music. */
+/* Written SoulMap books lead the site; practical services and music follow. */
 .home .site-header{position:relative;background:var(--black)}
 .work-hero{background:var(--cream);padding:64px 0 0}
 .work-hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.8fr);gap:64px;align-items:center}
@@ -19,7 +19,7 @@
 .work-hero-portrait figcaption{display:grid;gap:3px;padding:20px 22px}
 .work-hero-portrait strong{font-family:var(--serif);font-size:1.4rem;font-weight:400}
 .work-hero-portrait span{font-size:.71rem;color:var(--muted)}
-.need-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:48px;border-top:1px solid #18131426}
+.need-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:48px;border-top:1px solid #18131426}
 .need-link{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:23px 20px;font-size:.8rem;font-weight:600;line-height:1.5;border-inline-end:1px solid #18131426}
 .need-link:first-child{padding-inline-start:0}.need-link:last-child{border-inline-end:0}
 .need-link::after{content:'→';font-size:1.1rem;color:var(--burgundy)}
@@ -32,3 +32,31 @@
 .offer-choice .text-link{margin-inline-start:8px}
 @media(max-width:1000px){.work-hero-grid{gap:35px;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr)}.work-hero-copy h1{font-size:clamp(2.8rem,5.2vw,4.3rem)}.work-hero-copy .lead{font-size:1rem}.work-hero-copy .btn{padding-inline:18px}.need-link{padding-inline:14px}}
 @media(max-width:760px){.work-hero{padding-top:42px}.work-hero-grid{grid-template-columns:1fr;gap:28px}.work-hero-copy h1{font-size:clamp(2.55rem,9vw,3.8rem)}.work-hero-copy .eyebrow{font-size:.62rem;letter-spacing:.1em}.work-hero-copy .lead{font-size:1rem}.work-hero-copy .button-row{gap:10px;margin-top:24px}.work-hero-copy .btn{flex:1;padding-inline:14px}.work-hero-portrait{display:grid;grid-template-columns:96px 1fr;align-items:center}.work-hero-portrait img{aspect-ratio:1;height:96px}.work-hero-portrait figcaption{padding:16px}.work-hero-portrait strong{font-size:1.3rem}.work-hero-portrait span{font-size:.66rem}.need-links{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}.need-link{font-size:.73rem;padding:18px 12px;border-bottom:1px solid #18131426}.need-link:nth-child(2n){border-inline-end:0}.need-link:nth-child(2n+1){padding-inline-start:0}.offer-card h3{font-size:1.8rem}.offers-section{padding-top:55px}.offer-choice .text-link{margin:12px 0 0}.home-music .section-head{margin-bottom:30px}}
+
+.hero-format{font-size:.82rem;font-weight:600;color:var(--burgundy);line-height:1.7}
+.work-hero-book{background:transparent;max-width:390px;margin-inline:auto;width:100%}
+.work-hero-book img{aspect-ratio:1053/1494;object-fit:contain;max-height:520px;filter:drop-shadow(0 15px 18px #190b4020)}
+.work-hero-book figcaption{text-align:center;padding:18px 0}
+.soulmap-feature{background:var(--paper)}
+.soulmap-pro-feature{background:#eae3ee}
+.soulmap-feature-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,7vw,95px);align-items:center}
+.soul-book-cover{margin:0 auto;width:min(100%,360px)}
+.soul-book-cover img{object-fit:contain;box-shadow:0 20px 45px #190b4020}
+.soulmap-feature-grid ul{padding-left:20px;color:var(--muted);margin:0 0 22px}
+.soul-price{font-family:var(--serif);font-size:3rem;line-height:1.2;color:var(--burgundy);margin-bottom:18px}
+.soul-price small{font-family:var(--sans);font-size:.74rem;font-weight:500}
+.soul-themes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.soul-themes article{border-top:1px solid #18131430;padding-top:26px}
+.soul-themes h3{font-size:1.8rem}
+.soul-themes p{color:var(--muted);font-size:.94rem}
+.inquiry-form h2{font-size:2.1rem;margin-top:0}
+.checkbox-field label{display:flex;align-items:center;gap:12px;line-height:1.5}
+.checkbox-field input{width:18px;height:18px;flex:none;accent-color:var(--burgundy)}
+.draft-preview{margin-top:30px;border-top:1px solid #18131430;padding-top:24px}
+.draft-preview[hidden]{display:none}
+.draft-preview h3{font-size:1.6rem}
+.draft-preview textarea{width:100%;min-height:270px;padding:15px;border:1px solid #18131445;background:var(--cream);font-size:.82rem;resize:vertical}
+.field input:disabled{background:#e9e3df;color:var(--muted)}
+@media(max-width:1000px){.nav-links{gap:18px}.nav-links a{letter-spacing:.08em}}
+@media(max-width:900px){.soulmap-feature-grid{grid-template-columns:1fr;gap:40px}.soul-themes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.work-hero-book{display:block;max-width:270px}.work-hero-book img{height:auto;max-height:none}.work-hero-book figcaption{padding:15px 0}.soul-book-cover{max-width:270px}.soul-themes{grid-template-columns:1fr}.need-links{grid-template-columns:1fr}.need-link,.need-link:nth-child(2n){border-inline-end:0;padding:17px 0}.hero-format{font-size:.76rem}.soulmap-pro-feature .section-title{font-size:2.35rem}}

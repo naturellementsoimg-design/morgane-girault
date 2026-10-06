@@ -322,7 +322,9 @@ def link(href,label,cls='text-link',external=False):
 def paragraph(text): return '<p>'+esc(text)+'</p>'
 def bullet(items): return '<ul>'+''.join('<li>'+esc(i)+'</li>' for i in items)+'</ul>'
 def request_url(key,lang): return path('contact',lang)+'?service='+key
-def service_url(key,lang): return SERVICE_CHECKOUTS.get(key) or request_url(key,lang)
+def service_url(key,lang):
+    checkout=SERVICE_CHECKOUTS.get(key)
+    return checkout+'?locale='+lang if checkout else request_url(key,lang)
 def header(key,lang):
     l=LABELS[lang]; other='fr' if lang=='en' else 'en'
     items=''.join(f'<li><a href="{path(k,lang)}"'+(' aria-current="page"' if k==key else '')+f'>{("Support" if lang=="en" else "Soutenir") if k=="support" else l[k]}</a></li>' for k in ['soulmap','soulmappro','services','music','support','contact'])

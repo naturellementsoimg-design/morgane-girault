@@ -4,3 +4,31 @@
 @media(max-width:900px){.nav{min-height:76px}.nav-links{gap:20px}.split,.detail-grid{grid-template-columns:1fr;gap:40px}.aside{position:static}.manifesto-grid{grid-template-columns:1fr;gap:15px}.record-grid{gap:20px}.section{padding:75px 0}.footer-grid{gap:35px}.hero-content{padding-bottom:55px}.hero{min-height:720px}.steps{gap:22px}}
 @media(max-width:760px){.mobile-menu-btn{display:block}.nav-links{display:none;position:absolute;top:76px;inset-inline:0;background:var(--black);padding:20px 5%;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid #ffffff30}.nav-links.is-open{display:flex}.nav-links a{display:block;padding:14px 0}.entry-grid,.offer-grid,.record-grid,.steps{grid-template-columns:1fr}.entry,.offer-card{padding:32px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand-block{grid-column:1/-1}.hero{min-height:750px;min-height:100svh}.hero h1{font-size:clamp(3.1rem,10.8vw,5rem)}.hero-content{padding-top:160px;padding-bottom:48px}.hero-image{object-position:62% center}.hero-overlay{background:linear-gradient(0deg,#110d0efa,#110d0e22 95%),linear-gradient(90deg,#110d0e80,transparent)}.hero-line{font-size:1rem}.hero .btn{flex:1}.page-hero{padding:65px 0 55px}.page-hero h1{font-size:clamp(2.7rem,10vw,4.5rem)}.section-title{font-size:clamp(2.4rem,8vw,3.8rem)}.inquiry-form{padding:25px}.breadcrumbs{font-size:.65rem}.btn{padding-inline:20px}.manifesto{padding:65px 0}.steps li{padding-bottom:0}.quote{font-size:2.3rem}.footer-grid{gap:28px}.footer-brand{font-size:2.9rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Service-first home: readable offer copy, then the person and the music. */
+.home .site-header{position:relative;background:var(--black)}
+.work-hero{background:var(--cream);padding:64px 0 0}
+.work-hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.8fr);gap:64px;align-items:center}
+.work-hero-copy h1{font-size:clamp(3rem,5.2vw,4.7rem);line-height:1.04;margin:0 0 26px;color:var(--wine)}
+.work-hero-copy .eyebrow{letter-spacing:.13em;margin-bottom:22px}
+.work-hero-copy .lead{max-width:670px;font-size:1.12rem;line-height:1.7}
+.work-hero-copy .button-row{margin-top:28px}
+.work-hero-note{font-size:.76rem;color:var(--muted);margin:20px 0 0}
+.work-hero-portrait{margin:0;background:var(--paper)}
+.work-hero-portrait img{aspect-ratio:.9;object-fit:cover;object-position:86% center}
+.work-hero-portrait figcaption{display:grid;gap:3px;padding:20px 22px}
+.work-hero-portrait strong{font-family:var(--serif);font-size:1.4rem;font-weight:400}
+.work-hero-portrait span{font-size:.71rem;color:var(--muted)}
+.need-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:48px;border-top:1px solid #18131426}
+.need-link{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:23px 20px;font-size:.8rem;font-weight:600;line-height:1.5;border-inline-end:1px solid #18131426}
+.need-link:first-child{padding-inline-start:0}.need-link:last-child{border-inline-end:0}
+.need-link::after{content:'→';font-size:1.1rem;color:var(--burgundy)}
+.need-link:hover{color:var(--burgundy);text-decoration:underline;text-underline-offset:4px}
+.offers-section{background:var(--paper);scroll-margin-top:24px}
+.offers-section .offer-card{background:var(--cream)}
+.offer-card .eyebrow{letter-spacing:.12em;line-height:1.7;margin-bottom:18px}
+.offer-card h3{font-size:2rem}
+.offer-choice{max-width:900px;color:var(--muted);margin:36px 0 0;font-size:.92rem}
+.offer-choice .text-link{margin-inline-start:8px}
+@media(max-width:1000px){.work-hero-grid{gap:35px;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr)}.work-hero-copy h1{font-size:clamp(2.8rem,5.2vw,4.3rem)}.work-hero-copy .lead{font-size:1rem}.work-hero-copy .btn{padding-inline:18px}.need-link{padding-inline:14px}}
+@media(max-width:760px){.work-hero{padding-top:42px}.work-hero-grid{grid-template-columns:1fr;gap:28px}.work-hero-copy h1{font-size:clamp(2.55rem,9vw,3.8rem)}.work-hero-copy .eyebrow{font-size:.62rem;letter-spacing:.1em}.work-hero-copy .lead{font-size:1rem}.work-hero-copy .button-row{gap:10px;margin-top:24px}.work-hero-copy .btn{flex:1;padding-inline:14px}.work-hero-portrait{display:grid;grid-template-columns:96px 1fr;align-items:center}.work-hero-portrait img{aspect-ratio:1;height:96px}.work-hero-portrait figcaption{padding:16px}.work-hero-portrait strong{font-size:1.3rem}.work-hero-portrait span{font-size:.66rem}.need-links{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:28px}.need-link{font-size:.73rem;padding:18px 12px;border-bottom:1px solid #18131426}.need-link:nth-child(2n){border-inline-end:0}.need-link:nth-child(2n+1){padding-inline-start:0}.offer-card h3{font-size:1.8rem}.offers-section{padding-top:55px}.offer-choice .text-link{margin:12px 0 0}.home-music .section-head{margin-bottom:30px}}

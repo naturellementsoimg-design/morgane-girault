@@ -2,6 +2,12 @@
 
 Static bilingual website: English at `/`, French at `/fr/`, explicit language switches on corresponding pages. Published files are in `public/`; Vercel is configured to serve that directory.
 
+## Homepage and offer presentation
+
+The homepage leads with the visitor's career or business problem, identifies creatives, practitioners and independent professionals as the audience, and links directly to the four services. The offer cards show the starting problem, concrete output and price together. Morgane's mediumship and energetic reading are explicit in the career clarity offer; music, listening and paid songwriting commissions follow the services and introduction. Work with me comes before Music in the shared navigation and footer, including the preserved French essay and legal navigation. English and French service pages use the same problem-led structure, descriptive titles and service-specific links. Stylesheets are versioned by their content hash.
+
+The October 2026 wording review uses English / United States as a comparison for international clients. Ubersuggest autocomplete returned terms including `professional bio writing services`, `AI for small business owners`, `how to use AI for small business` and `AI workflows for small business`; its daily report quota prevented fresh volume and difficulty metrics. These phrases inform wording, without claims about volume or rankings. Market context: [The Muse's career-rut service](https://www.themuse.com/coaching/stuck-in-a-career-rut), [SCORE's May 2026 practical AI session](https://www.score.org/business-education/ai-small-business-find-opportunities-and-take-action/) and [LinkedIn / Ipsos 2026 early small business findings](https://business.linkedin.com/small-business/resources/2026-small-business-study). Descriptive page titles follow [Google Search Central guidance](https://developers.google.com/search/docs/appearance/title-link).
+
 ## Current services
 
 | Service | Price | Delivery scope |
